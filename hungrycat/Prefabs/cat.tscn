@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c4lsh3pt5kx20"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p7tgn"]
+friction = 0.6
+bounce = 0.3
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3rjor"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c737h"]
+radius = 16.0
+height = 44.0
+
+[node name="Cat" type="RigidBody2D" unique_id=1973975741]
+physics_material_override = SubResource("PhysicsMaterial_p7tgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=998690046]
+self_modulate = Color(0, 1, 1, 1)
+position = Vector2(4.7683716e-07, 25.999998)
+scale = Vector2(32, 34)
+texture = SubResource("PlaceholderTexture2D_3rjor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392588693]
+position = Vector2(0, 26)
+shape = SubResource("CapsuleShape2D_c737h")

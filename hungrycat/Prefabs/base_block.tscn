@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmu70riglva4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx3lt"]
+size = Vector2(70, 70)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_18j7p"]
+
+[node name="BaseBlock" type="RigidBody2D" unique_id=475867005]
+sleeping = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109315328]
+position = Vector2(35, 35)
+shape = SubResource("RectangleShape2D_jx3lt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459480613]
+position = Vector2(35, 35.125)
+scale = Vector2(70, 69.75)
+texture = SubResource("PlaceholderTexture2D_18j7p")

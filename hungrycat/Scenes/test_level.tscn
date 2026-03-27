@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://crs3hd42tgscp"]
+
+[ext_resource type="PackedScene" uid="uid://c4lsh3pt5kx20" path="res://Prefabs/cat.tscn" id="1_iti4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpde8"]
+size = Vector2(1280, 177)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iti4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iti4p"]
+size = Vector2(201.5, 32)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dtjkg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eglq2"]
+
+[node name="TestLevel" type="Node2D" unique_id=673210325]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=610322236]
+position = Vector2(12, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1255374722]
+position = Vector2(628, 78.5)
+shape = SubResource("RectangleShape2D_lpde8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=223760446]
+position = Vector2(628.1672, 78.51147)
+scale = Vector2(-1279.5035, 176.41765)
+texture = SubResource("PlaceholderTexture2D_iti4p")
+
+[node name="Environment" type="Node2D" parent="." unique_id=1618163148]
+
+[node name="CatapultBase" type="StaticBody2D" parent="." unique_id=1139733412]
+position = Vector2(241, 537)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatapultBase" unique_id=140473708]
+position = Vector2(-0.25, -12)
+shape = SubResource("RectangleShape2D_iti4p")
+
+[node name="Sprite2D" type="Sprite2D" parent="CatapultBase" unique_id=512244299]
+position = Vector2(-0.25001144, -11.750024)
+scale = Vector2(201.5, 32.49999)
+texture = SubResource("PlaceholderTexture2D_dtjkg")
+
+[node name="LaundhPoint" type="Marker2D" parent="CatapultBase" unique_id=23568500]
+position = Vector2(-1, -29)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1785907291]
+
+[node name="UIRoot" type="Control" parent="HUD" unique_id=604143564]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/UIRoot" unique_id=1069882588]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/UIRoot/MarginContainer" unique_id=2023720162]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="Label" type="Label" parent="HUD/UIRoot/MarginContainer/HBoxContainer" unique_id=1317678797]
+layout_mode = 2
+text = "score"
+
+[node name="TextureRect" type="TextureRect" parent="HUD/UIRoot/MarginContainer/HBoxContainer" unique_id=573200822]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_eglq2")
+
+[node name="CatQueue" type="Node2D" parent="." unique_id=2093085711]
+position = Vector2(98, 533)
+
+[node name="Cat3" parent="CatQueue" unique_id=1973975741 instance=ExtResource("1_iti4p")]
+position = Vector2(-66, -34)
+freeze = true
+
+[node name="Cat2" parent="CatQueue" unique_id=1048542956 instance=ExtResource("1_iti4p")]
+position = Vector2(-29, -34)
+freeze = true
+
+[node name="Cat" parent="CatQueue" unique_id=1860730625 instance=ExtResource("1_iti4p")]
+position = Vector2(8, -34)
+freeze = true
