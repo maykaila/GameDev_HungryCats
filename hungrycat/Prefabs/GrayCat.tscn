@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dackh6pi6dgjq"]
+
+[ext_resource type="PackedScene" uid="uid://c4lsh3pt5kx20" path="res://Prefabs/cat.tscn" id="1_234rx"]
+[ext_resource type="SpriteFrames" uid="uid://b4g0ikbyq5vwv" path="res://Assets/Cats/GrayCat_Frames.tres" id="2_034k2"]
+
+[node name="Cat" unique_id=1973975741 instance=ExtResource("1_234rx")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1316354509]
+sprite_frames = ExtResource("2_034k2")
