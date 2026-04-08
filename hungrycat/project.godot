@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="hungrycat"
+run/main_scene="uid://crs3hd42tgscp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,3 +27,4 @@ window/size/viewport_height=720
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.4117647, 0.61960787, 0.9882353, 1)
