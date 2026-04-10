@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dnctwjlli24i"]
+
+[ext_resource type="Script" uid="uid://cg3fo55q3viaw" path="res://Scripts/settings_popup.gd" id="1_aqgmw"]
+[ext_resource type="Texture2D" uid="uid://bqp6mbf27wwwl" path="res://Assets/tilemaps/UiCozyFree.png" id="1_qcpyp"]
+[ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_aqgmw"]
+[ext_resource type="Texture2D" uid="uid://kljv55exb5vx" path="res://Assets/tilemaps/FreeUI.png" id="3_co5rc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssihi"]
+atlas = ExtResource("1_qcpyp")
+region = Rect2(6.433861, 165.5455, 90.585945, 85.06995)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i3yr"]
+atlas = ExtResource("3_co5rc")
+region = Rect2(129.82112, 161.51743, 15.134262, 14.693634)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ilj12"]
+load_path = "res://.godot/imported/FreeUI.png-757084cd07d118b7f4e0bdd204bd0f39.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm3kg"]
+atlas = SubResource("CompressedTexture2D_ilj12")
+region = Rect2(129.82112, 161.51743, 15.134262, 14.693634)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcpyp"]
+bg_color = Color(0.48235294, 0.3019608, 0.3019608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SettingsPopup" type="CanvasLayer" unique_id=2142754211]
+visible = false
+script = ExtResource("1_aqgmw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1625581828]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1862003861]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -182.0
+offset_right = 183.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ssihi")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=1523827083]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 11.0
+offset_right = 223.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("2_aqgmw")
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+
+[node name="Sound" type="Label" parent="ColorRect/TextureRect" unique_id=485781663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -38.0
+offset_right = 12.5
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aqgmw")
+theme_override_font_sizes/font_size = 22
+text = "Sound Volume"
+
+[node name="Music" type="Label" parent="ColorRect/TextureRect" unique_id=486936184]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -72.0
+offset_right = 10.5
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aqgmw")
+theme_override_font_sizes/font_size = 22
+text = "Music Volume"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/TextureRect" unique_id=1954172392]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 26.5
+offset_top = -80.0
+offset_right = 107.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+theme_override_constants/separation = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/TextureRect/VBoxContainer" unique_id=1159649708]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/VBoxContainer/HBoxContainer" unique_id=890564159]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_7i3yr")
+
+[node name="MusicToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/HBoxContainer" unique_id=18357768]
+layout_mode = 2
+
+[node name="SoundRow" type="HBoxContainer" parent="ColorRect/TextureRect/VBoxContainer" unique_id=1982583283]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/VBoxContainer/SoundRow" unique_id=937760902]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_nm3kg")
+
+[node name="SoundToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/SoundRow" unique_id=1458923076]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="ColorRect/TextureRect" unique_id=1939862833]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -78.0
+offset_right = 25.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_aqgmw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcpyp")
+text = "Close"
+
+[connection signal="pressed" from="ColorRect/TextureRect/CloseButton" to="." method="_on_close_button_pressed"]
