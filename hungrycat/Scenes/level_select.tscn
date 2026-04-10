@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dyacw560ohd2i"]
+
+[ext_resource type="Script" uid="uid://p7c3yblnqh32" path="res://Scripts/level_select.gd" id="1_lx4vd"]
+[ext_resource type="Texture2D" uid="uid://kljv55exb5vx" path="res://Assets/tilemaps/FreeUI.png" id="1_nkys2"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="2_lx4vd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sqnl"]
+atlas = ExtResource("1_nkys2")
+region = Rect2(111.54047, 223.42087, 17.154984, 16.94519)
+
+[node name="LevelSelect" type="Control" unique_id=1226141273]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lx4vd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664528803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="LevelBanner" type="TextureRect" parent="." unique_id=1603050608]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=758881119]
+texture_filter = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 71.0
+offset_bottom = 65.0
+texture_normal = SubResource("AtlasTexture_2sqnl")
+stretch_mode = 0
+
+[node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("2_lx4vd")]
+
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
