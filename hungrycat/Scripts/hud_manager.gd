@@ -21,7 +21,7 @@ func _on_btn_play_pressed() -> void:
 func _on_btn_exit_pressed() -> void:
 	# Quit the game entirely (or you can use get_tree().change_scene_to_file() to go to a main menu later)
 	get_tree().quit()
-
+	
 
 func _on_btn_settings_pressed() -> void:
-	pass # Replace with function body.
+	$SettingsPopup.show()

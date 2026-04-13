@@ -16,6 +16,13 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.78860694, 0.78860694, 0.78860676, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ce3w2"]
 load_path = "res://.godot/imported/settings.png-3822602d3e3c5fa6ed8e7508d4987085.ctex"
 
@@ -73,6 +80,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n45e2")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ce3w2")
 text = "START"
 
 [node name="SettingsButton" type="TextureButton" parent="." unique_id=260489189]

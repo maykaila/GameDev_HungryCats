@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cr00un0x7tg4y" path="res://Scripts/hud_manager.gd" id="1_xdtoa"]
 [ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_ofty5"]
+[ext_resource type="Texture2D" uid="uid://cw5uops8y8lex" path="res://Assets/kibble.png" id="3_isbnw"]
 [ext_resource type="Texture2D" uid="uid://bqp6mbf27wwwl" path="res://Assets/tilemaps/UiCozyFree.png" id="3_omdad"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eglq2"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="4_ofty5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btda1"]
 atlas = ExtResource("3_omdad")
@@ -22,7 +22,7 @@ atlas = ExtResource("3_omdad")
 region = Rect2(100.857864, 166.60428, 59.21945, 82.04361)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yvf5"]
-bg_color = Color(0.5058824, 0.31764707, 0.28235295, 1)
+bg_color = Color(0.48235294, 0.3019608, 0.3019608, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -109,12 +109,12 @@ anchor_right = 1.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIRoot/MarginContainer" unique_id=1738341847]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_constants/separation = 15
+theme_override_constants/separation = 4
 alignment = 2
 
 [node name="Label" type="Label" parent="UIRoot/MarginContainer/HBoxContainer" unique_id=885790175]
@@ -124,9 +124,12 @@ theme_override_font_sizes/font_size = 29
 text = "score"
 
 [node name="TextureRect" type="TextureRect" parent="UIRoot/MarginContainer/HBoxContainer" unique_id=1586431600]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(90, 50)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_eglq2")
+texture = ExtResource("3_isbnw")
+expand_mode = 4
+stretch_mode = 4
+flip_h = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="UIRoot" unique_id=1888991274]
 layout_mode = 1
@@ -231,6 +234,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_so54a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sw8nc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x6ft1")
 text = "Exit"
+
+[node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("4_ofty5")]
 
 [connection signal="pressed" from="UIRoot/MarginContainer2/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UIRoot/PauseOverlay/PausePlatform/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
