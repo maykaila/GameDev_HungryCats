@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b5rae7lvglul6" path="res://Assets/Cats/orange cat/idleLoaf.png" id="1_ce3w2"]
 [ext_resource type="Script" uid="uid://crl2m53y11pxv" path="res://Scripts/main_menu.gd" id="1_n45e2"]
 [ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_n45e2"]
-[ext_resource type="Texture2D" uid="uid://kljv55exb5vx" path="res://Assets/tilemaps/FreeUI.png" id="3_opfnp"]
 [ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="4_cp0ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
@@ -17,9 +16,12 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_trj04"]
-atlas = ExtResource("3_opfnp")
-region = Rect2(111.17862, 224.82224, 17.410324, 15.62973)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ce3w2"]
+load_path = "res://.godot/imported/settings.png-3822602d3e3c5fa6ed8e7508d4987085.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = SubResource("CompressedTexture2D_ce3w2")
+region = Rect2(27.034939, 323.11035, 237.06711, 239.64392)
 
 [node name="MainMenu" type="Control" unique_id=1697917365]
 layout_mode = 3
@@ -78,10 +80,11 @@ texture_filter = 1
 layout_mode = 0
 offset_left = 21.0
 offset_top = 23.0
-offset_right = 71.0
-offset_bottom = 65.0
-texture_normal = SubResource("AtlasTexture_trj04")
-stretch_mode = 0
+offset_right = 90.0
+offset_bottom = 89.0
+texture_normal = SubResource("AtlasTexture_n45e2")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("4_cp0ys")]
 
