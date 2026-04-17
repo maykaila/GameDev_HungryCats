@@ -19,8 +19,11 @@ func _on_btn_play_pressed() -> void:
 
 
 func _on_btn_exit_pressed() -> void:
-	# Quit the game entirely (or you can use get_tree().change_scene_to_file() to go to a main menu later)
-	get_tree().quit()
+	# 1. Unfreeze the game engine first so your menu buttons actually work!
+	get_tree().paused = false
+	
+	# 2. Change the scene back to the Level Select screen
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
 	
 
 func _on_btn_settings_pressed() -> void:
