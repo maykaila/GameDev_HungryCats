@@ -24,7 +24,19 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqgmw"]
+bg_color = Color(0.25490198, 0.14901961, 0.12941177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co5rc"]
+bg_color = Color(0.25490198, 0.14901961, 0.12941177, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="SettingsPopup" type="CanvasLayer" unique_id=2142754211]
+process_mode = 3
+layer = 10
 visible = false
 script = ExtResource("1_aqgmw")
 
@@ -32,6 +44,8 @@ script = ExtResource("1_aqgmw")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
@@ -44,20 +58,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -148.0
-offset_top = -182.0
-offset_right = 183.0
-offset_bottom = 154.0
+offset_left = -201.0
+offset_top = -172.5
+offset_right = 201.0
+offset_bottom = 172.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_ssihi")
 
 [node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=1523827083]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 11.0
-offset_right = 223.0
-offset_bottom = 42.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 12.0
+offset_right = 55.5
+offset_bottom = 43.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_aqgmw")
 theme_override_font_sizes/font_size = 30
 text = "SETTINGS"
@@ -69,15 +87,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.5
-offset_top = -39.0
-offset_right = 18.5
-offset_bottom = -16.0
+offset_left = -143.0
+offset_top = -34.0
+offset_right = 24.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_aqgmw")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 30
 text = "Sound Volume"
 
 [node name="Music" type="Label" parent="ColorRect/TextureRect" unique_id=486936184]
@@ -87,15 +105,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.5
-offset_top = -75.0
-offset_right = 17.5
-offset_bottom = -52.0
+offset_left = -142.0
+offset_top = -81.0
+offset_right = 21.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_aqgmw")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 30
 text = "Music Volume"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/TextureRect" unique_id=1954172392]
@@ -105,10 +123,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 26.5
-offset_top = -80.0
-offset_right = 107.5
-offset_bottom = -19.0
+offset_left = 39.0
+offset_top = -87.0
+offset_right = 120.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -122,7 +140,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_7i3yr")
-expand_mode = 1
+expand_mode = 4
 stretch_mode = 5
 
 [node name="MusicToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/HBoxContainer" unique_id=18357768]
@@ -135,7 +153,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 texture = SubResource("AtlasTexture_nm3kg")
-expand_mode = 1
+expand_mode = 4
 stretch_mode = 5
 
 [node name="SoundToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/SoundRow" unique_id=1458923076]
@@ -148,14 +166,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -78.0
-offset_right = 25.0
-offset_bottom = -47.0
+offset_left = -38.25
+offset_top = -91.5
+offset_right = 38.25
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_aqgmw")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_qcpyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aqgmw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co5rc")
 text = "Close"
 
 [connection signal="pressed" from="ColorRect/TextureRect/CloseButton" to="." method="_on_close_button_pressed"]
