@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bhbvqgyar318m"]
+
+[ext_resource type="Texture2D" uid="uid://b5rae7lvglul6" path="res://Assets/Cats/orange cat/idleLoaf.png" id="1_ce3w2"]
+[ext_resource type="Script" uid="uid://crl2m53y11pxv" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_n45e2"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="4_cp0ys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ce3w2"]
+load_path = "res://.godot/imported/settings.png-3822602d3e3c5fa6ed8e7508d4987085.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = SubResource("CompressedTexture2D_ce3w2")
+region = Rect2(27.034939, 323.11035, 237.06711, 239.64392)
+
+[node name="MainMenu" type="Control" unique_id=1697917365]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n45e2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1381778581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15775332, 0.15775332, 0.15775332, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=95609782]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -278.5
+offset_right = 239.5
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ce3w2")
+
+[node name="StartButton" type="Button" parent="." unique_id=2071559686]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -206.0
+offset_right = 188.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n45e2")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
+text = "START"
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=260489189]
+texture_filter = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 90.0
+offset_bottom = 89.0
+texture_normal = SubResource("AtlasTexture_n45e2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("4_cp0ys")]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

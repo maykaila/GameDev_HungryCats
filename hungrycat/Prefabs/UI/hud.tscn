@@ -10,6 +10,13 @@
 atlas = ExtResource("3_omdad")
 region = Rect2(95.79468, 96.197205, 16.47017, 15.89563)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xdtoa"]
+load_path = "res://.godot/imported/UiCozyFree.png-215936669d6d30e6f60a253ea354ace4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofty5"]
+atlas = SubResource("CompressedTexture2D_xdtoa")
+region = Rect2(112.50343, 97.45713, 15.025787, 14.112053)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xq3o0"]
 atlas = ExtResource("3_omdad")
 region = Rect2(100.857864, 166.60428, 59.21945, 82.04361)
@@ -136,6 +143,7 @@ theme_override_constants/margin_bottom = 40
 texture_filter = 1
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_btda1")
+texture_pressed = SubResource("AtlasTexture_ofty5")
 stretch_mode = 0
 
 [node name="PauseOverlay" type="ColorRect" parent="UIRoot" unique_id=1223221153]
@@ -163,6 +171,20 @@ offset_bottom = 182.625
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_xq3o0")
+
+[node name="Label" type="Label" parent="UIRoot/PauseOverlay/PausePlatform" unique_id=528813336]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 123.0
+offset_top = -174.0
+offset_right = 211.0
+offset_bottom = -138.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 35
+text = "PAUSE"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UIRoot/PauseOverlay/PausePlatform" unique_id=608355941]
 layout_mode = 1

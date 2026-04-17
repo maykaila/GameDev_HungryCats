@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dyacw560ohd2i"]
+
+[ext_resource type="Script" uid="uid://p7c3yblnqh32" path="res://Scripts/level_select.gd" id="1_lx4vd"]
+[ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_2sqnl"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="2_lx4vd"]
+[ext_resource type="Texture2D" uid="uid://bm55rcym33vlj" path="res://Assets/settings.png" id="3_72w8f"]
+[ext_resource type="Texture2D" uid="uid://cfkknyc04ggft" path="res://Assets/levels/1.png" id="5_s6o25"]
+[ext_resource type="Texture2D" uid="uid://dkkejosryvmhy" path="res://Assets/levels/locked.png" id="6_kb5mc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s6o25"]
+load_path = "res://.godot/imported/banner.png-92c2571a6b789d1b0090225511ef7022.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sqnl"]
+atlas = ExtResource("3_72w8f")
+region = Rect2(27.034939, 323.11035, 237.06711, 239.64392)
+
+[node name="LevelSelect" type="Control" unique_id=1226141273]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lx4vd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664528803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="LevelBanner" type="TextureRect" parent="." unique_id=1603050608]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -427.75
+offset_right = 427.75
+offset_bottom = 203.0
+grow_horizontal = 2
+texture = SubResource("CompressedTexture2D_s6o25")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="LevelBanner" unique_id=331050137]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.0
+offset_top = 72.0
+offset_right = 156.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2sqnl")
+theme_override_font_sizes/font_size = 60
+text = "SELECT LEVEL"
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=758881119]
+texture_filter = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 90.0
+offset_bottom = 89.0
+texture_normal = SubResource("AtlasTexture_2sqnl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("2_lx4vd")]
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=727425432]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -66.0
+offset_right = 270.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Level1" type="TextureButton" parent="GridContainer" unique_id=1829449348]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level2" type="TextureButton" parent="GridContainer" unique_id=4286190]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level3" type="TextureButton" parent="GridContainer" unique_id=585463199]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level4" type="TextureButton" parent="GridContainer" unique_id=1604995671]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level5" type="TextureButton" parent="GridContainer" unique_id=123269524]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level6" type="TextureButton" parent="GridContainer" unique_id=1114848166]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level7" type="TextureButton" parent="GridContainer" unique_id=1285789019]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level8" type="TextureButton" parent="GridContainer" unique_id=387945981]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level9" type="TextureButton" parent="GridContainer" unique_id=1563388502]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Level10" type="TextureButton" parent="GridContainer" unique_id=112765677]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_s6o25")
+texture_disabled = ExtResource("6_kb5mc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

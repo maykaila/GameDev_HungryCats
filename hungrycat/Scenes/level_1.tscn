@@ -470,6 +470,22 @@ texture = SubResource("PlaceholderTexture2D_dtjkg")
 [node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase" unique_id=23568500]
 position = Vector2(-1, -29)
 
+[node name="CatapultBase2" type="StaticBody2D" parent="Entities" unique_id=1179659599]
+position = Vector2(1550, 475)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/CatapultBase2" unique_id=1323195960]
+position = Vector2(-0.25, -12)
+shape = SubResource("RectangleShape2D_iti4p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/CatapultBase2" unique_id=1653498623]
+position = Vector2(-0.25001144, -11.750024)
+scale = Vector2(201.5, 32.49999)
+texture = SubResource("PlaceholderTexture2D_dtjkg")
+
+[node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase2" unique_id=1916689907]
+position = Vector2(-1, -29)
+
 [node name="CatQueue" type="Node2D" parent="Entities" unique_id=2093085711]
 position = Vector2(98, 533)
 

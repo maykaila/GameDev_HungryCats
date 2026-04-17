@@ -8,18 +8,18 @@ friction = 0.6
 bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw1el"]
-size = Vector2(41, 36)
+size = Vector2(46, 43)
 
 [node name="Cat" type="RigidBody2D" unique_id=1973975741]
 physics_material_override = SubResource("PhysicsMaterial_p7tgn")
 script = ExtResource("1_c737h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316354509]
-position = Vector2(8.000003, 28.562515)
-scale = Vector2(0.15999998, 0.15624991)
+position = Vector2(12.500002, 33.062515)
+scale = Vector2(0.18999998, 0.1862499)
 sprite_frames = ExtResource("1_3rjor")
 animation = &"airborne"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392588693]
-position = Vector2(7.5, 28)
+position = Vector2(12, 32)
 shape = SubResource("RectangleShape2D_uw1el")
