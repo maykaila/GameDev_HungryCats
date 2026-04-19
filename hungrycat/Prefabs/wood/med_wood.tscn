@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c1epmcgrn24ap"]
+
+[ext_resource type="Texture2D" uid="uid://bhg41x7qp4514" path="res://Assets/longPlank.png" id="1_oqpxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ily4"]
+size = Vector2(8, 122)
+
+[node name="MedWood" type="RigidBody2D" unique_id=1261910867]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=545328097]
+texture_filter = 1
+position = Vector2(104, 179)
+scale = Vector2(0.3125, 0.98412704)
+texture = ExtResource("1_oqpxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868616492]
+position = Vector2(104, 179)
+shape = SubResource("RectangleShape2D_6ily4")

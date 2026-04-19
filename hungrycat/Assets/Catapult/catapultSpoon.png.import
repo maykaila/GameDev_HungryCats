@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsinavj3judwe"
-path="res://.godot/imported/fortandstuff.png-7e219e717ac807233949169075767cd2.ctex"
+uid="uid://b010x8dnydgyw"
+path="res://.godot/imported/catapultSpoon.png-07f61386a97d3641b8a4896a3bfcc1f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fortandstuff.png"
-dest_files=["res://.godot/imported/fortandstuff.png-7e219e717ac807233949169075767cd2.ctex"]
+source_file="res://Assets/Catapult/catapultSpoon.png"
+dest_files=["res://.godot/imported/catapultSpoon.png-07f61386a97d3641b8a4896a3bfcc1f1.ctex"]
 
 [params]
 
