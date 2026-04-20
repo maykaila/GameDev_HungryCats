@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbyjilsivv71y"]
+[gd_scene format=3 uid="uid://c4lsh3pt5kx20"]
 
 [ext_resource type="SpriteFrames" uid="uid://c56ujvts67dil" path="res://Assets/Cats/BlackCat_Frames.tres" id="1_3rjor"]
 [ext_resource type="Script" uid="uid://811nnec8raf0" path="res://Scripts/cat.gd" id="1_c737h"]

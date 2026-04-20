@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kvjg7g372vku"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_38pvp"]
+load_path = "res://.godot/imported/fortandstuff (1).png-54a250f8bf50ffd8d4d4ffc932ffb848.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvjbj"]
+atlas = SubResource("CompressedTexture2D_38pvp")
+region = Rect2(5.708702, 147.24512, 57.21472, 44.526947)
+
+[node name="Box2" type="RigidBody2D" unique_id=1835325860]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597075937]
+texture_filter = 1
+position = Vector2(79, 61)
+texture = SubResource("AtlasTexture_wvjbj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=926989472]
+position = Vector2(79, 61)
+polygon = PackedVector2Array(25.599998, -22, -16.5, -22, -28.5, -11.7, -28.5, 22, 22.099998, 22, 27.400002, 16, 28.5, 16, 28.5, -20.3)

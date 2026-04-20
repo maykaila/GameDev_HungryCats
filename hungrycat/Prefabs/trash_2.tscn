@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ck4mgloapxgqo"]
+
+[ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_l6wfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b1w2"]
+atlas = ExtResource("1_l6wfq")
+region = Rect2(128.62044, 11.352744, 15.431885, 21.119267)
+
+[node name="Trash2" type="RigidBody2D" unique_id=1973781408]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1407822998]
+texture_filter = 1
+position = Vector2(33.84375, 43.75)
+scale = Vector2(1.6208334, 1.6428571)
+texture = SubResource("AtlasTexture_3b1w2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1142474179]
+position = Vector2(33.84375, 43.75)
+scale = Vector2(1.6208334, 1.6428571)
+polygon = PackedVector2Array(-7.5, -10.5, -7.5, 10.5, 7.5, 10.5, 7.5, -10.5)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dita01pc4aw7o"]
+
+[ext_resource type="Texture2D" uid="uid://chljtrfwnr4dh" path="res://Assets/fortandstuff (1).png" id="1_djlpv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwkqn"]
+atlas = ExtResource("1_djlpv")
+region = Rect2(24.079887, 0.935339, 18.705315, 65.84729)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udxlx"]
+size = Vector2(13, 63)
+
+[node name="WoodBlock" type="RigidBody2D" unique_id=38883923]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=500277336]
+texture_filter = 1
+position = Vector2(47, 76)
+scale = Vector2(0.7777778, 1)
+texture = SubResource("AtlasTexture_vwkqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73598522]
+position = Vector2(47.5, 76.5)
+shape = SubResource("RectangleShape2D_udxlx")
