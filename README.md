@@ -19,8 +19,9 @@ The game is currently in active development. The foundational systems, UI, and i
     *   The first three levels are fully designed and mapped out.
     *   Destructible environments: Wooden and stone forts for the rats are built and placed in the scenes.
 *   **Characters:** The main cat and rat sprites/nodes are fully integrated into the game world.
-*   **Demo:**
-    https://github.com/user-attachments/assets/dd2f58e8-e171-4df9-91d3-77cbc0ebcf0c
+
+### Demo
+https://github.com/user-attachments/assets/dd2f58e8-e171-4df9-91d3-77cbc0ebcf0c
 
 
 
