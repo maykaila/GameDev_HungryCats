@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dbsvjr0yqwtdv"]
+
+[ext_resource type="Script" uid="uid://dr8lhiml028fo" path="res://Scripts/story_intro.gd" id="1_mvuxe"]
+[ext_resource type="PackedScene" uid="uid://eiulc06xnv1f" path="res://Scenes/main_menu_hybrid.tscn" id="3_mvuxe"]
+[ext_resource type="Texture2D" uid="uid://cif6uyqfxvi40" path="res://Assets/Intro_Assets/3.png" id="4_qvkwf"]
+[ext_resource type="Texture2D" uid="uid://bgvxixp007moh" path="res://Assets/Intro_Assets/0.png" id="5_yetic"]
+[ext_resource type="Texture2D" uid="uid://10xx7xg0dfts" path="res://Assets/hud/button.png" id="6_mhr1i"]
+[ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="7_qvkwf"]
+[ext_resource type="AudioStream" uid="uid://dua2poqvudxbs" path="res://Assets/Intro_Assets/Cinematic Suspense Trailer NoCopyright Music for Video _ Dark City by Soundridemusic.mp3" id="7_yetic"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t1syr"]
+load_path = "res://.godot/imported/1.png-12f654385d07a20cb5eb6bf3fee6c979.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7y8tx"]
+load_path = "res://.godot/imported/2.png-2a72df438df7728b8fc1e09b17901e34.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yetic"]
+load_path = "res://.godot/imported/4.png-2697ce2daff9437391dc4fc5c11dbaab.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_webd4"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yetic"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhr1i"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="StoryIntro" type="Control" unique_id=495279404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mvuxe")
+comic_panels = Array[Texture2D]([SubResource("CompressedTexture2D_t1syr"), SubResource("CompressedTexture2D_7y8tx"), ExtResource("4_qvkwf"), SubResource("CompressedTexture2D_yetic")])
+read_time = 2.0
+main_menu_scene = ExtResource("3_mvuxe")
+
+[node name="Background" type="ColorRect" parent="." unique_id=669277777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StartScreen" type="TextureRect" parent="." unique_id=20443550]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_yetic")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen" unique_id=2023968295]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.5
+offset_top = -5.5
+offset_right = 226.5
+offset_bottom = 579.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mhr1i")
+
+[node name="StartButton" type="Button" parent="StartScreen" unique_id=1197396100]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 523.0
+offset_top = 577.0
+offset_right = 767.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_qvkwf")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_webd4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yetic")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhr1i")
+text = "Press this to start"
+
+[node name="ComicDisplay" type="TextureRect" parent="." unique_id=892465990]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BGMPlayer" type="AudioStreamPlayer2D" parent="." unique_id=528802115]
+stream = ExtResource("7_yetic")

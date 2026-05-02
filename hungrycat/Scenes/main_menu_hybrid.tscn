@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://eiulc06xnv1f"]
+
+[ext_resource type="Script" uid="uid://cssy110iah3dm" path="res://Scripts/main_menu_hybrid.gd" id="1_o1fj6"]
+[ext_resource type="Texture2D" uid="uid://10xx7xg0dfts" path="res://Assets/hud/button.png" id="2_ok0q6"]
+[ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_rhjum"]
+[ext_resource type="Texture2D" uid="uid://d1bofvv6ifjho" path="res://Assets/hungrycatss.png" id="3_euupq"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/UI/settings_popup.tscn" id="3_ok0q6"]
+[ext_resource type="Texture2D" uid="uid://d1vqtxac1t2rm" path="res://Assets/Intro_Assets/0.1.png" id="4_euupq"]
+[ext_resource type="Texture2D" uid="uid://v81y8qileuee" path="res://Assets/Intro_Assets/0.2.png" id="5_odns7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euupq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7wrr"]
+bg_color = Color(0.7882353, 0.7882353, 0.7882353, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ce3w2"]
+load_path = "res://.godot/imported/settings.png-3822602d3e3c5fa6ed8e7508d4987085.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugigc"]
+atlas = SubResource("CompressedTexture2D_ce3w2")
+region = Rect2(27.034939, 323.11035, 237.06711, 239.64392)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok0q6"]
+size = Vector2(1281.5, 178)
+
+[node name="MainMenuHybrid" type="Node2D" unique_id=348697617]
+script = ExtResource("1_o1fj6")
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=2016098807]
+
+[node name="TextureRect" type="TextureRect" parent="UI_Layer" unique_id=1436307599]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -68.5
+offset_right = 302.5
+offset_bottom = 508.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ok0q6")
+
+[node name="TextureRect2" type="TextureRect" parent="UI_Layer" unique_id=1332783442]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -276.0
+offset_right = 283.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_euupq")
+
+[node name="StartButton" type="Button" parent="UI_Layer" unique_id=116894846]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -206.0
+offset_right = 188.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rhjum")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_euupq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o7wrr")
+text = "START"
+
+[node name="SettingsButton" type="TextureButton" parent="UI_Layer" unique_id=1228300982]
+texture_filter = 1
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 90.0
+offset_bottom = 89.0
+texture_normal = SubResource("AtlasTexture_ugigc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsPopup" parent="UI_Layer" unique_id=2142754211 instance=ExtResource("3_ok0q6")]
+unique_name_in_owner = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=422596402]
+
+[node name="CityLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1308972456]
+motion_mirroring = Vector2(1903, 0)
+
+[node name="CityTexture" type="TextureRect" parent="ParallaxBackground/CityLayer" unique_id=383582996]
+texture_filter = 1
+texture_repeat = 2
+offset_top = -92.0
+offset_right = 1875.0
+offset_bottom = 631.0
+texture = ExtResource("4_euupq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2037320942]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1499049239]
+texture_filter = 1
+position = Vector2(641, 628)
+scale = Vector2(1, 1.0340909)
+texture = ExtResource("5_odns7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1870646303]
+position = Vector2(640.25, 627)
+shape = SubResource("RectangleShape2D_ok0q6")
+
+[connection signal="pressed" from="UI_Layer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI_Layer/SettingsButton" to="." method="_on_settings_button_pressed"]

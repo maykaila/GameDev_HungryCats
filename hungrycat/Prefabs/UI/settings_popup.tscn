@@ -145,6 +145,7 @@ stretch_mode = 5
 
 [node name="MusicToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/HBoxContainer" unique_id=18357768]
 layout_mode = 2
+button_pressed = true
 
 [node name="SoundRow" type="HBoxContainer" parent="ColorRect/TextureRect/VBoxContainer" unique_id=1982583283]
 layout_mode = 2
@@ -158,6 +159,7 @@ stretch_mode = 5
 
 [node name="SoundToggle" type="CheckButton" parent="ColorRect/TextureRect/VBoxContainer/SoundRow" unique_id=1458923076]
 layout_mode = 2
+button_pressed = true
 
 [node name="CloseButton" type="Button" parent="ColorRect/TextureRect" unique_id=1939862833]
 layout_mode = 1
@@ -179,4 +181,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aqgmw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_co5rc")
 text = "Close"
 
+[connection signal="toggled" from="ColorRect/TextureRect/VBoxContainer/HBoxContainer/MusicToggle" to="." method="_on_music_toggle_toggled"]
+[connection signal="toggled" from="ColorRect/TextureRect/VBoxContainer/SoundRow/SoundToggle" to="." method="_on_sound_toggle_toggled"]
 [connection signal="pressed" from="ColorRect/TextureRect/CloseButton" to="." method="_on_close_button_pressed"]

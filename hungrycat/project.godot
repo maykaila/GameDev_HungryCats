@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="hungrycat"
-run/main_scene="uid://bhbvqgyar318m"
+run/main_scene="uid://gy21hqufpide"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalMusic="*uid://dnljdgjbvmmq0"
 
 [display]
 

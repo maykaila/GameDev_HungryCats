@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dua2poqvudxbs"
+path="res://.godot/imported/Cinematic Suspense Trailer NoCopyright Music for Video _ Dark City by Soundridemusic.mp3-400dada683b0aab72917223777974ae6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Intro_Assets/Cinematic Suspense Trailer NoCopyright Music for Video _ Dark City by Soundridemusic.mp3"
+dest_files=["res://.godot/imported/Cinematic Suspense Trailer NoCopyright Music for Video _ Dark City by Soundridemusic.mp3-400dada683b0aab72917223777974ae6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
