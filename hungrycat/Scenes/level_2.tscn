@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://df6feikd1i7df" path="res://Prefabs/rat.tscn" id="9_vcilj"]
 [ext_resource type="PackedScene" uid="uid://dwx0jakfhr6n" path="res://Prefabs/wood/long_wood.tscn" id="10_vcilj"]
 [ext_resource type="PackedScene" uid="uid://ck4mgloapxgqo" path="res://Prefabs/trash_2.tscn" id="13_vcilj"]
+[ext_resource type="PackedScene" uid="uid://cc6evo7sdh7me" path="res://Scenes/catapult.tscn" id="14_bl0du"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42uki"]
 texture = ExtResource("1_v36qu")
@@ -438,11 +439,6 @@ texture = ExtResource("1_v36qu")
 [sub_resource type="TileSet" id="TileSet_vcilj"]
 sources/0 = SubResource("TileSetAtlasSource_ait6c")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl0du"]
-size = Vector2(201.5, 32)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q0ycs"]
-
 [node name="Level2" type="Node2D" unique_id=1756133236]
 
 [node name="Environment" type="Node2D" parent="." unique_id=809497087]
@@ -462,38 +458,6 @@ tile_map_data = PackedByteArray("AAAAAAQAAAAHAAoAAAABAAQAAAAIAAoAAAABAAUAAAABAAk
 tile_set = SubResource("TileSet_vcilj")
 
 [node name="Entities" type="Node2D" parent="." unique_id=47802081]
-
-[node name="CatapultBase" type="StaticBody2D" parent="Entities" unique_id=1450333666]
-position = Vector2(241, 444)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/CatapultBase" unique_id=821778144]
-position = Vector2(-0.25, -12)
-shape = SubResource("RectangleShape2D_bl0du")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entities/CatapultBase" unique_id=584479655]
-position = Vector2(-0.25001144, -11.750024)
-scale = Vector2(201.5, 32.49999)
-texture = SubResource("PlaceholderTexture2D_q0ycs")
-
-[node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase" unique_id=632631100]
-position = Vector2(-1, -29)
-
-[node name="CatapultBase2" type="StaticBody2D" parent="Entities" unique_id=751833187]
-position = Vector2(1550, 475)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/CatapultBase2" unique_id=190133245]
-position = Vector2(-0.25, -12)
-shape = SubResource("RectangleShape2D_bl0du")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entities/CatapultBase2" unique_id=2117930868]
-position = Vector2(-0.25001144, -11.750024)
-scale = Vector2(201.5, 32.49999)
-texture = SubResource("PlaceholderTexture2D_q0ycs")
-
-[node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase2" unique_id=318601149]
-position = Vector2(-1, -29)
 
 [node name="CatQueue" type="Node2D" parent="Entities" unique_id=1824694954]
 position = Vector2(98, 430)
@@ -625,3 +589,9 @@ position = Vector2(2103, 279)
 position = Vector2(2104, 222)
 
 [node name="HUD" parent="." unique_id=1517812279 instance=ExtResource("5_uhnj4")]
+
+[node name="catapult" parent="." unique_id=540123503 groups=["catapult_group"] instance=ExtResource("14_bl0du")]
+position = Vector2(217, 337)
+
+[node name="catapult2" parent="." unique_id=1890523775 groups=["catapult_group"] instance=ExtResource("14_bl0du")]
+position = Vector2(1494, 368)

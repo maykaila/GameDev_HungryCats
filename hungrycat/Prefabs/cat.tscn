@@ -10,16 +10,20 @@ bounce = 0.3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw1el"]
 size = Vector2(46, 43)
 
-[node name="Cat" type="RigidBody2D" unique_id=1973975741]
+[node name="Cat" type="RigidBody2D" unique_id=1973975741 groups=["cats"]]
 physics_material_override = SubResource("PhysicsMaterial_p7tgn")
 script = ExtResource("1_c737h")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316354509]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1316354509 groups=["cats"]]
 position = Vector2(12.500002, 33.062515)
 scale = Vector2(0.18999998, 0.1862499)
 sprite_frames = ExtResource("1_3rjor")
-animation = &"airborne"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392588693]
 position = Vector2(12, 32)
 shape = SubResource("RectangleShape2D_uw1el")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=425101940]
+position = Vector2(34, 30)
+target_position = Vector2(50, 0)
