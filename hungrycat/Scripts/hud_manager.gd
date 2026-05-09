@@ -17,14 +17,13 @@ func _on_btn_play_pressed() -> void:
 	pause_overlay.visible = false
 	get_tree().paused = false
 
+func _on_btn_settings_pressed() -> void:
+	$SettingsPopup.show()
 
-func _on_btn_exit_pressed() -> void:
+
+func _on_close_button_pressed() -> void:
 	# 1. Unfreeze the game engine first so your menu buttons actually work!
 	get_tree().paused = false
 	
 	# 2. Change the scene back to the Level Select screen
 	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
-	
-
-func _on_btn_settings_pressed() -> void:
-	$SettingsPopup.show()

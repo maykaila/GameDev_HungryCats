@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cr00un0x7tg4y" path="res://Scripts/hud_manager.gd" id="1_xdtoa"]
 [ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="2_ofty5"]
 [ext_resource type="Texture2D" uid="uid://cw5uops8y8lex" path="res://Assets/kibble.png" id="3_isbnw"]
-[ext_resource type="Texture2D" uid="uid://bqp6mbf27wwwl" path="res://Assets/tilemaps/UiCozyFree.png" id="3_omdad"]
 [ext_resource type="Texture2D" uid="uid://bm55rcym33vlj" path="res://Assets/settings.png" id="4_isbnw"]
-[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/settings_popup.tscn" id="4_ofty5"]
+[ext_resource type="PackedScene" uid="uid://dnctwjlli24i" path="res://Prefabs/UI/settings_popup.tscn" id="4_ofty5"]
+[ext_resource type="Texture2D" uid="uid://cauovyvkr45qo" path="res://Assets/hud/pixilart-drawing.png" id="5_isbnw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0o8b"]
 atlas = ExtResource("4_isbnw")
@@ -15,26 +15,22 @@ region = Rect2(24.899841, 17.099915, 238.70004, 250.6549)
 atlas = ExtResource("4_isbnw")
 region = Rect2(325.248, 24.788208, 239.6695, 239.88632)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xq3o0"]
-atlas = ExtResource("3_omdad")
-region = Rect2(100.857864, 166.60428, 59.21945, 82.04361)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yvf5"]
-bg_color = Color(0.48235294, 0.3019608, 0.3019608, 1)
+bg_color = Color(0.3647059, 0.54509807, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btda1"]
-bg_color = Color(0.25521457, 0.14885536, 0.12820768, 1)
+bg_color = Color(0.21515459, 9.62615e-06, 0.89424026, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq3o0"]
-bg_color = Color(0.36191946, 0.21832839, 0.19152871, 1)
+bg_color = Color(0.21568628, 0, 0.89411765, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -43,21 +39,21 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yvf5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ihge"]
-bg_color = Color(0.5058824, 0.31764707, 0.28235295, 1)
+bg_color = Color(0.3647059, 0.54509807, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8v7by"]
-bg_color = Color(0.25521457, 0.14885536, 0.12820768, 1)
+bg_color = Color(0.21568628, 0, 0.89411765, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rqgg"]
-bg_color = Color(0.36191946, 0.21832839, 0.19152871, 1)
+bg_color = Color(0.21568628, 0, 0.89411765, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -66,27 +62,44 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwmob"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akkqd"]
-bg_color = Color(0.5058824, 0.31764707, 0.28235295, 1)
+bg_color = Color(0.3647059, 0.54509807, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so54a"]
-bg_color = Color(0.25521457, 0.14885536, 0.12820768, 1)
+bg_color = Color(0.21568628, 0, 0.89411765, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw8nc"]
-bg_color = Color(0.36191946, 0.21832839, 0.19152871, 1)
+bg_color = Color(0.21568628, 0, 0.89411765, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6ft1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isbnw"]
+bg_color = Color(0.17027369, 0.43312508, 0.82550174, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0o8b"]
+bg_color = Color(0.25490198, 0.14901961, 0.70980394, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2dku"]
+bg_color = Color(0.25490198, 0.14901961, 0.70980394, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="HUD" type="CanvasLayer" unique_id=1517812279]
 process_mode = 3
@@ -167,24 +180,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -182.625
-offset_right = 167.0
-offset_bottom = 182.625
+offset_left = -248.25
+offset_top = -297.5
+offset_right = 248.25
+offset_bottom = 297.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_xq3o0")
+texture = ExtResource("5_isbnw")
 
 [node name="Label" type="Label" parent="UIRoot/PauseOverlay/PausePlatform" unique_id=528813336]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 123.0
-offset_top = -174.0
-offset_right = 211.0
-offset_bottom = -138.0
+offset_left = 227.25
+offset_top = -144.0
+offset_right = 315.25
+offset_bottom = -108.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 35
 text = "PAUSE"
@@ -207,6 +221,8 @@ theme_override_constants/separation = 15
 [node name="BtnPlay" type="Button" parent="UIRoot/PauseOverlay/PausePlatform/VBoxContainer" unique_id=272796001]
 texture_filter = 1
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_2yvf5")
@@ -217,6 +233,8 @@ text = "Play"
 
 [node name="BtnSettings" type="Button" parent="UIRoot/PauseOverlay/PausePlatform/VBoxContainer" unique_id=445012977]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ihge")
@@ -226,7 +244,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_mwmob")
 text = "Settings"
 
 [node name="BtnExit" type="Button" parent="UIRoot/PauseOverlay/PausePlatform/VBoxContainer" unique_id=467770997]
+visible = false
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ofty5")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_akkqd")
@@ -235,9 +256,30 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_sw8nc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x6ft1")
 text = "Exit"
 
+[node name="CloseButton" type="Button" parent="UIRoot/PauseOverlay/PausePlatform" unique_id=1628246133]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -188.5
+offset_right = 40.25
+offset_bottom = -156.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ofty5")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_isbnw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y0o8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p2dku")
+text = "Exit"
+
 [node name="SettingsPopup" parent="." unique_id=2142754211 instance=ExtResource("4_ofty5")]
 
 [connection signal="pressed" from="UIRoot/MarginContainer2/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UIRoot/PauseOverlay/PausePlatform/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="UIRoot/PauseOverlay/PausePlatform/VBoxContainer/BtnSettings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="UIRoot/PauseOverlay/PausePlatform/VBoxContainer/BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="UIRoot/PauseOverlay/PausePlatform/CloseButton" to="." method="_on_close_button_pressed"]
