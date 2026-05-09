@@ -23,11 +23,14 @@ The game is currently in active development. The foundational systems, UI, and i
 ### Demo
 https://github.com/user-attachments/assets/dd2f58e8-e171-4df9-91d3-77cbc0ebcf0c
 
+### May 9 Progress
+* Working catapult
+* New levels
+* Catapult added to levels
 
-
-
+### Demo
+https://github.com/user-attachments/assets/b0f7a92b-2476-437f-9f7d-96695ee3b14d
 
 ### 🚧 Work in Progress (Coming Soon)
-*   **Core Gameplay Mechanics:** The slingshot/catapult physics, launching cats, and structure destruction logic.
 *   **Sound Effects (SFX):** Adding impact sounds, catapult snaps, cat meows, and rat squeaks to the SFX audio bus.
 *   **Win/Loss States:** Logic for completing a level when all rats are defeated or restarting when out of cats.
