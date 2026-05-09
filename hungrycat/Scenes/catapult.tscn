@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cc6evo7sdh7me"]
+
+[ext_resource type="Script" uid="uid://b6m8imeorc73n" path="res://Prefabs/catapult-testing.gd" id="1_fpf4n"]
+[ext_resource type="Texture2D" uid="uid://b010x8dnydgyw" path="res://Assets/Catapult/catapultSpoon.png" id="2_mlphu"]
+[ext_resource type="Texture2D" uid="uid://b2ur8f0a0jbbw" path="res://Assets/Catapult/catapultBody.png" id="3_06edq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfg1"]
+size = Vector2(23, 23)
+
+[node name="catapult" type="Node2D" unique_id=540123503]
+script = ExtResource("1_fpf4n")
+
+[node name="axle" type="Marker2D" parent="." unique_id=633493621 groups=["catapult_group"]]
+position = Vector2(80, 67)
+
+[node name="spoon" type="Sprite2D" parent="axle" unique_id=916650010]
+position = Vector2(-83, -73)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mlphu")
+centered = false
+
+[node name="launchPoint" type="Marker2D" parent="axle/spoon" unique_id=1795728669]
+position = Vector2(190.00002, 70)
+
+[node name="body" type="Sprite2D" parent="." unique_id=724853926]
+position = Vector2(64, 64)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_06edq")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=151199758]
+position = Vector2(-6, 99)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=130194813]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_tpfg1")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

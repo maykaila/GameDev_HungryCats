@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ck4mgloapxgqo" path="res://Prefabs/trash_2.tscn" id="10_xjeco"]
 [ext_resource type="PackedScene" uid="uid://da5u5ovqdf4xj" path="res://Prefabs/wood/med_wood_2.tscn" id="11_j77fg"]
 [ext_resource type="PackedScene" uid="uid://cvsp4sntif71f" path="res://Prefabs/box/box.tscn" id="12_n4vm5"]
+[ext_resource type="PackedScene" uid="uid://cc6evo7sdh7me" path="res://Scenes/catapult.tscn" id="14_fxnjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rvg2"]
 texture = ExtResource("1_vwg62")
@@ -439,11 +440,6 @@ texture = ExtResource("1_vwg62")
 [sub_resource type="TileSet" id="TileSet_n4vm5"]
 sources/0 = SubResource("TileSetAtlasSource_c81s1")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxnjf"]
-size = Vector2(201.5, 32)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xjeco"]
-
 [node name="Level3" type="Node2D" unique_id=1072496]
 
 [node name="Environment" type="Node2D" parent="." unique_id=902793773]
@@ -467,38 +463,6 @@ position = Vector2(947, 281)
 rotation = 0.5013355
 
 [node name="Entities" type="Node2D" parent="." unique_id=1273267112]
-
-[node name="CatapultBase" type="StaticBody2D" parent="Entities" unique_id=353303990]
-position = Vector2(241, 444)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/CatapultBase" unique_id=1769965958]
-position = Vector2(-0.25, -12)
-shape = SubResource("RectangleShape2D_fxnjf")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entities/CatapultBase" unique_id=305775826]
-position = Vector2(-0.25001144, -11.750024)
-scale = Vector2(201.5, 32.49999)
-texture = SubResource("PlaceholderTexture2D_xjeco")
-
-[node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase" unique_id=127610053]
-position = Vector2(-1, -29)
-
-[node name="CatapultBase2" type="StaticBody2D" parent="Entities" unique_id=777922160]
-position = Vector2(1550, 475)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/CatapultBase2" unique_id=1376023759]
-position = Vector2(-0.25, -12)
-shape = SubResource("RectangleShape2D_fxnjf")
-
-[node name="Sprite2D" type="Sprite2D" parent="Entities/CatapultBase2" unique_id=443103359]
-position = Vector2(-0.25001144, -11.750024)
-scale = Vector2(201.5, 32.49999)
-texture = SubResource("PlaceholderTexture2D_xjeco")
-
-[node name="LaundhPoint" type="Marker2D" parent="Entities/CatapultBase2" unique_id=1146993482]
-position = Vector2(-1, -29)
 
 [node name="CatQueue" type="Node2D" parent="Entities" unique_id=907978721]
 position = Vector2(98, 430)
@@ -643,3 +607,9 @@ position = Vector2(2116, 30)
 position = Vector2(2116, 274)
 
 [node name="HUD" parent="." unique_id=1517812279 instance=ExtResource("5_l4wr6")]
+
+[node name="catapult" parent="." unique_id=540123503 groups=["catapult_group"] instance=ExtResource("14_fxnjf")]
+position = Vector2(182, 337)
+
+[node name="catapult2" parent="." unique_id=1882907019 groups=["catapult_group"] instance=ExtResource("14_fxnjf")]
+position = Vector2(1491, 369)
