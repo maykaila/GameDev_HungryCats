@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://df6feikd1i7df"]
 
+[ext_resource type="Script" uid="uid://dmm4ntgi7kl6u" path="res://Scripts/rat.gd" id="1_sfuv8"]
 [ext_resource type="Texture2D" uid="uid://bqtwrfawcj0qk" path="res://Assets/rats.png" id="1_sq2hy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfuv8"]
@@ -7,6 +8,7 @@ atlas = ExtResource("1_sq2hy")
 region = Rect2(31.672394, 34.21808, 262.51328, 260.90277)
 
 [node name="Rat" type="RigidBody2D" unique_id=1014021651]
+script = ExtResource("1_sfuv8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919569925]
 texture_filter = 1

@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dwx0jakfhr6n"]
 
 [ext_resource type="Texture2D" uid="uid://bhg41x7qp4514" path="res://Assets/longPlank.png" id="1_24m2l"]
+[ext_resource type="Script" uid="uid://bvafotqilft25" path="res://Scripts/wood.gd" id="1_ctv3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24m2l"]
 size = Vector2(10, 171)
 
 [node name="LongWood" type="RigidBody2D" unique_id=625900143]
+script = ExtResource("1_ctv3d")
+velocity_damage_threshold = 600.0
+score_value = 800
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593094562]
 texture_filter = 1
