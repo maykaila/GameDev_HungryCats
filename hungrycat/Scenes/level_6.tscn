@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://nha7eaalk2j4"]
 
 [ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_cepf5"]
+[ext_resource type="Script" path="res://Scripts/globalLevel.gd" id="1_ncld5"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_6d83s"]
 [ext_resource type="PackedScene" uid="uid://f6f5e0h1tpor" path="res://Prefabs/cats/BlackCat.tscn" id="2_fdnf0"]
 [ext_resource type="PackedScene" uid="uid://dackh6pi6dgjq" path="res://Prefabs/cats/GrayCat.tscn" id="3_xcj7k"]
 [ext_resource type="PackedScene" uid="uid://bikhytuiokcip" path="res://Prefabs/cats/OrangeCat.tscn" id="4_c1tev"]
@@ -440,7 +442,25 @@ texture = ExtResource("1_cepf5")
 [sub_resource type="TileSet" id="TileSet_n4vm5"]
 sources/0 = SubResource("TileSetAtlasSource_c81s1")
 
-[node name="Level4" type="Node2D" unique_id=1072496]
+[node name="Level4" type="Node2D" unique_id=1072496 node_paths=PackedStringArray("section_markers", "rat_containers", "cat_containers")]
+script = ExtResource("1_ncld5")
+section_markers = [NodePath("Pos1"), NodePath("Pos2"), NodePath("Pos3")]
+rat_containers = [NodePath("Entities/Rats"), NodePath("Entities/Rats2"), NodePath("Entities/Rats3")]
+cat_containers = [NodePath("Entities/CatQueue"), NodePath("Entities/CatQueue2"), NodePath("Entities/CatQueue3")]
+
+[node name="levelComplete_popup" parent="." unique_id=2142754211 instance=ExtResource("2_6d83s")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=485242457]
+position = Vector2(640, 361)
+
+[node name="Pos1" type="Marker2D" parent="." unique_id=605647120]
+position = Vector2(640, 361)
+
+[node name="Pos2" type="Marker2D" parent="." unique_id=1313962498]
+position = Vector2(1918, 361)
+
+[node name="Pos3" type="Marker2D" parent="." unique_id=1995814506]
+position = Vector2(3138, 361)
 
 [node name="Environment" type="Node2D" parent="." unique_id=902793773]
 
@@ -470,6 +490,30 @@ position = Vector2(17.999992, -37)
 position = Vector2(-25, -37)
 
 [node name="Cat3" parent="Entities/CatQueue" unique_id=76561325 instance=ExtResource("4_c1tev")]
+position = Vector2(-68, -37)
+
+[node name="CatQueue2" type="Node2D" parent="Entities" unique_id=306315566]
+position = Vector2(1414, 461)
+
+[node name="Cat" parent="Entities/CatQueue2" unique_id=113568750 instance=ExtResource("2_fdnf0")]
+position = Vector2(17.999992, -37)
+
+[node name="Cat2" parent="Entities/CatQueue2" unique_id=644260051 instance=ExtResource("3_xcj7k")]
+position = Vector2(-25, -37)
+
+[node name="Cat3" parent="Entities/CatQueue2" unique_id=364462918 instance=ExtResource("4_c1tev")]
+position = Vector2(-68, -37)
+
+[node name="CatQueue3" type="Node2D" parent="Entities" unique_id=371960700]
+position = Vector2(2665, 397)
+
+[node name="Cat" parent="Entities/CatQueue3" unique_id=552449097 instance=ExtResource("2_fdnf0")]
+position = Vector2(17.999992, -37)
+
+[node name="Cat2" parent="Entities/CatQueue3" unique_id=335567411 instance=ExtResource("3_xcj7k")]
+position = Vector2(-25, -37)
+
+[node name="Cat3" parent="Entities/CatQueue3" unique_id=795723815 instance=ExtResource("4_c1tev")]
 position = Vector2(-68, -37)
 
 [node name="Ratfort" type="Node2D" parent="Entities" unique_id=638122364]
@@ -647,26 +691,30 @@ position = Vector2(838, 158)
 [node name="Rat11" parent="Entities/Rats" unique_id=1725718497 instance=ExtResource("11_l5rae")]
 position = Vector2(838, 402)
 
-[node name="Rat4" parent="Entities/Rats" unique_id=1094816187 instance=ExtResource("11_l5rae")]
-position = Vector2(3144, 171)
+[node name="Rats2" type="Node2D" parent="Entities" unique_id=1573419965]
 
-[node name="Rat5" parent="Entities/Rats" unique_id=743603288 instance=ExtResource("11_l5rae")]
-position = Vector2(3139, 232)
-
-[node name="Rat6" parent="Entities/Rats" unique_id=928363950 instance=ExtResource("11_l5rae")]
-position = Vector2(3346, 392)
-
-[node name="Rat7" parent="Entities/Rats" unique_id=251338280 instance=ExtResource("11_l5rae")]
-position = Vector2(3326, 272)
-
-[node name="Rat" parent="Entities/Rats" unique_id=2138490948 instance=ExtResource("11_l5rae")]
+[node name="Rat" parent="Entities/Rats2" unique_id=2138490948 instance=ExtResource("11_l5rae")]
 position = Vector2(2100, 429)
 
-[node name="Rat2" parent="Entities/Rats" unique_id=1399372207 instance=ExtResource("11_l5rae")]
+[node name="Rat2" parent="Entities/Rats2" unique_id=1399372207 instance=ExtResource("11_l5rae")]
 position = Vector2(2101, 334)
 
-[node name="Rat3" parent="Entities/Rats" unique_id=1234686885 instance=ExtResource("11_l5rae")]
+[node name="Rat3" parent="Entities/Rats2" unique_id=1234686885 instance=ExtResource("11_l5rae")]
 position = Vector2(2066, 297)
+
+[node name="Rats3" type="Node2D" parent="Entities" unique_id=5037588]
+
+[node name="Rat4" parent="Entities/Rats3" unique_id=1094816187 instance=ExtResource("11_l5rae")]
+position = Vector2(3144, 171)
+
+[node name="Rat5" parent="Entities/Rats3" unique_id=743603288 instance=ExtResource("11_l5rae")]
+position = Vector2(3139, 232)
+
+[node name="Rat6" parent="Entities/Rats3" unique_id=928363950 instance=ExtResource("11_l5rae")]
+position = Vector2(3346, 392)
+
+[node name="Rat7" parent="Entities/Rats3" unique_id=251338280 instance=ExtResource("11_l5rae")]
+position = Vector2(3326, 272)
 
 [node name="HUD" parent="." unique_id=1517812279 instance=ExtResource("12_fd8gt")]
 
