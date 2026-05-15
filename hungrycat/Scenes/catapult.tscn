@@ -35,4 +35,8 @@ collision_layer = 2
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_tpfg1")
 
+[node name="TrajectoryLine" type="Line2D" parent="." unique_id=1545365623]
+width = 3.0
+default_color = Color(1, 1, 1, 0.6862745)
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

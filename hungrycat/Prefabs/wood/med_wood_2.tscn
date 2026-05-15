@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://da5u5ovqdf4xj"]
 
+[ext_resource type="Script" uid="uid://bvafotqilft25" path="res://Scripts/wood.gd" id="1_6qa0e"]
 [ext_resource type="Texture2D" uid="uid://bhg41x7qp4514" path="res://Assets/longPlank.png" id="1_fa8qc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qa0e"]
 size = Vector2(8, 122)
 
 [node name="MedWood2" type="RigidBody2D" unique_id=1955852991]
+script = ExtResource("1_6qa0e")
+velocity_damage_threshold = 600.0
+score_value = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1809851883]
 modulate = Color(0, 0, 0, 1)
