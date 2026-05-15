@@ -490,7 +490,7 @@ position = Vector2(-34, -36)
 position = Vector2(-77, -36)
 
 [node name="CatQueue2" type="Node2D" parent="Entities" unique_id=1268567930]
-position = Vector2(1569, 461)
+position = Vector2(1421, 461)
 
 [node name="Cat" parent="Entities/CatQueue2" unique_id=2007877252 instance=ExtResource("2_cggpd")]
 position = Vector2(8.999992, -36)
@@ -626,4 +626,4 @@ position = Vector2(826, 232)
 position = Vector2(217, 337)
 
 [node name="catapult2" parent="." unique_id=1890523775 groups=["catapult_group"] instance=ExtResource("14_bl0du")]
-position = Vector2(1642, 368)
+position = Vector2(1494, 368)

@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://cfssusx6g3iui"]
 
 [ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_dtjkg"]
+[ext_resource type="Script" uid="uid://c6frtq3u3ax4c" path="res://Scripts/globalLevel.gd" id="1_uy8f0"]
+[ext_resource type="PackedScene" uid="uid://cs65dx32r411l" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_6r07y"]
 [ext_resource type="PackedScene" uid="uid://f6f5e0h1tpor" path="res://Prefabs/cats/BlackCat.tscn" id="2_7w7ni"]
 [ext_resource type="PackedScene" uid="uid://dackh6pi6dgjq" path="res://Prefabs/cats/GrayCat.tscn" id="3_btda1"]
 [ext_resource type="PackedScene" uid="uid://dliro8apcvymv" path="res://Prefabs/UI/hud.tscn" id="3_eglq2"]
@@ -436,7 +438,20 @@ texture = ExtResource("1_dtjkg")
 [sub_resource type="TileSet" id="TileSet_btda1"]
 sources/0 = SubResource("TileSetAtlasSource_evi0p")
 
-[node name="Level1" type="Node2D" unique_id=673210325]
+[node name="Level1" type="Node2D" unique_id=673210325 node_paths=PackedStringArray("section_markers", "rat_containers", "cat_containers")]
+script = ExtResource("1_uy8f0")
+section_markers = [NodePath("Marker2D")]
+rat_containers = [NodePath("Entities/Rats")]
+cat_containers = [NodePath("Entities/CatQueue")]
+
+[node name="levelComplete_popup" parent="." unique_id=2142754211 instance=ExtResource("2_6r07y")]
+next_level_path = "uid://5iixqr3ipr"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1965478530]
+position = Vector2(638, 359)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1767067419]
+position = Vector2(638, 359)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1618163148]
 
