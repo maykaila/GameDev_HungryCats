@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_dtjkg"]
 [ext_resource type="Script" uid="uid://c6frtq3u3ax4c" path="res://Scripts/globalLevel.gd" id="1_uy8f0"]
-[ext_resource type="PackedScene" uid="uid://cs65dx32r411l" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_6r07y"]
+[ext_resource type="PackedScene" uid="uid://dc2wue0pm1ns8" path="res://Prefabs/UI/levelFailed_popup.tscn" id="2_6ioyp"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_6r07y"]
 [ext_resource type="PackedScene" uid="uid://f6f5e0h1tpor" path="res://Prefabs/cats/BlackCat.tscn" id="2_7w7ni"]
 [ext_resource type="PackedScene" uid="uid://dackh6pi6dgjq" path="res://Prefabs/cats/GrayCat.tscn" id="3_btda1"]
 [ext_resource type="PackedScene" uid="uid://dliro8apcvymv" path="res://Prefabs/UI/hud.tscn" id="3_eglq2"]
@@ -444,7 +445,11 @@ section_markers = [NodePath("Marker2D")]
 rat_containers = [NodePath("Entities/Rats")]
 cat_containers = [NodePath("Entities/CatQueue")]
 
-[node name="levelComplete_popup" parent="." unique_id=2142754211 instance=ExtResource("2_6r07y")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1550058504]
+
+[node name="levelFailed_popup" parent="CanvasLayer" unique_id=2142754211 instance=ExtResource("2_6ioyp")]
+
+[node name="levelComplete_popup" parent="CanvasLayer" unique_id=1135754675 instance=ExtResource("2_6r07y")]
 next_level_path = "uid://5iixqr3ipr"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1965478530]
