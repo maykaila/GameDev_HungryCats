@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cg13nno5mqaqj" path="res://Assets/levels/4.png" id="9_mlwxk"]
 [ext_resource type="Texture2D" uid="uid://blm5hemuo6qw0" path="res://Assets/levels/5.png" id="10_npf18"]
 [ext_resource type="Texture2D" uid="uid://dbttw18y8ajnd" path="res://Assets/levels/6.png" id="11_bpfon"]
-[ext_resource type="Texture2D" uid="uid://bmjbfxhexrcif" path="res://Assets/levels/7.png" id="12_ciagn"]
 [ext_resource type="Texture2D" uid="uid://b7nmiadfyslv3" path="res://Assets/levels/8.png" id="13_yx562"]
 [ext_resource type="Texture2D" uid="uid://4adh15jb07oh" path="res://Assets/levels/9.png" id="14_wn3si"]
 [ext_resource type="Texture2D" uid="uid://c54xw3baexjwp" path="res://Assets/levels/10.png" id="15_r2u0r"]
@@ -162,7 +161,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("12_ciagn")
+texture_normal = ExtResource("6_kb5mc")
 texture_disabled = ExtResource("6_kb5mc")
 ignore_texture_size = true
 stretch_mode = 5
