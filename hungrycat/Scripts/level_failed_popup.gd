@@ -1,22 +1,28 @@
 extends CanvasLayer
 
-# UPDATE THESE PATHS to match your actual folder structure!
 const MAIN_MENU_PATH = "res://Scenes/level_select.tscn"
+
+# --- NODES ---
+# Make sure this path ($ColorRect/...) matches your actual scene tree!
+@onready var actual_score_label = $ColorRect/TextureRect/HBoxContainer/ActualScore
 
 func _ready() -> void:
 	self.hide()
 	process_mode = PROCESS_MODE_ALWAYS
 
-# This is the function called by your globalLevel.gd script
-func open_level_failed() -> void:
+# Update this function to accept the score argument
+func open_level_failed(final_score: int) -> void:
+	if actual_score_label:
+		actual_score_label.text = str(final_score)
+	
 	self.show()
-	get_tree().paused = true # Pause everything else in the background
+	get_tree().paused = true 
 
 func _on_retry_level_button_pressed() -> void:
-	# Unpause the game before reloading, otherwise the new scene starts paused!
 	get_tree().paused = false
-	get_tree().reload_current_scene() # 
+	get_tree().reload_current_scene() 
 
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file(MAIN_MENU_PATH)
+	# Use your new GameManager for consistency!
+	GameManager.go_to_main_menu()
