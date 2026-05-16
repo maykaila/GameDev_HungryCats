@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalMusic="*uid://dnljdgjbvmmq0"
 ScoreManager="*uid://gub8dxnxodb6"
+GameManager="*uid://bimkobncywmaa"
 
 [display]
 

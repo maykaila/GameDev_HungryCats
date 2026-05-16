@@ -79,16 +79,16 @@ func check_conditions():
 				break
 	
 	if cats_left.size() == 0 and not any_catapult_has_cat:
-		can_check_win = false # Stop checking while we wait
+		# 1. IMMEDIATELY turn this off so the next frame exits early at the top of _process!
+		can_check_win = false 
 		
-		# REDUCED from 3.5 to 1.5 to match the Win timing
+		# 2. Wait out your visual delay safely
 		await get_tree().create_timer(1.5).timeout
 		
-		# Check one last time if a rat survived the final cat
+		# 3. Double check conditions now that the timer is done
 		if get_tree().get_nodes_in_group("rats").size() > 0:
 			trigger_end_game(false)
 		else:
-			# If the last cat actually killed the last rat during the delay
 			trigger_end_game(true)
 
 func advance_to_next_section():

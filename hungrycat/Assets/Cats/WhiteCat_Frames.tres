@@ -25,6 +25,10 @@ region = Rect2(0, 300, 300, 300)
 atlas = ExtResource("1_q53cc")
 region = Rect2(300, 300, 300, 300)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q53cc"]
+atlas = ExtResource("4_c1wd1")
+region = Rect2(300, 0, 300, 300)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_i63ch"]
 atlas = ExtResource("4_c1wd1")
 region = Rect2(0, 0, 300, 300)
@@ -73,6 +77,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"in_catapult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q53cc")
+}],
+"loop": true,
+"name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
