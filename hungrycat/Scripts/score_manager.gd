@@ -2,6 +2,7 @@ extends Node
 
 signal score_changed(new_score)
 signal level_completed(final_score) # New megaphone to announce a win!
+signal level_failed
 
 var current_score: int = 0
 var cat_bonus_value: int = 10000 # 10k points per unused cat!

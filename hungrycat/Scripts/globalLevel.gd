@@ -52,44 +52,23 @@ func _process(_delta: float) -> void:
 	check_conditions()
 
 func check_conditions():
-	var rats_in_group = get_tree().get_nodes_in_group("rats")
+	# 1. Count how many cats are actually left in the level!
+	# We subtract 1 because the cat that just died hasn't been fully removed from the scene tree yet.
+	var cats_left = get_tree().get_nodes_in_group("cats").size() - 1 
 	
-	# --- WIN Logic ---
-	if rats_in_group.size() == 0:
-		can_check_win = false # Stop checking while we wait
-		
-		# Wait 1.5 seconds so the player can see the building collapse
-		await get_tree().create_timer(1.5).timeout 
-		
-		if section_markers.size() > 0 and current_section_index < section_markers.size() - 1:
-			advance_to_next_section()
-		else:
-			trigger_end_game(true)
-		return
-
-	# --- LOSS Logic ---
-	var cats_left = get_tree().get_nodes_in_group("cats")
-	var catapults = get_tree().get_nodes_in_group("catapult_group")
-	var any_catapult_has_cat = false
+	# 2. Check if the rats are still alive
+	var rats_alive = get_tree().get_nodes_in_group("rats").size()
 	
-	for c in catapults:
-		if "is_active" in c:
-			if c.is_active and c.loaded_cat != null:
-				any_catapult_has_cat = true
-				break
-	
-	if cats_left.size() == 0 and not any_catapult_has_cat:
-		# 1. IMMEDIATELY turn this off so the next frame exits early at the top of _process!
-		can_check_win = false 
+	if cats_left <= 0 and rats_alive > 0:
+		# 3. Wait 4 seconds for the final cat to finish destroying the fort!
+		await get_tree().create_timer(4.0).timeout
 		
-		# 2. Wait out your visual delay safely
-		await get_tree().create_timer(1.5).timeout
+		# 4. Check the rats ONE MORE TIME after the dust settles. 
+		var final_rats = get_tree().get_nodes_in_group("rats").size()
 		
-		# 3. Double check conditions now that the timer is done
-		if get_tree().get_nodes_in_group("rats").size() > 0:
-			trigger_end_game(false)
-		else:
-			trigger_end_game(true)
+		if final_rats > 0:
+			# The player actually lost. Trigger the UI!
+			ScoreManager.level_failed.emit()
 
 func advance_to_next_section():
 	can_check_win = false 

@@ -102,11 +102,10 @@ func _on_body_entered(_body):
 		
 		anim.play("land")
 		
-		# Optional: If your 'land' animation isn't a loop, 
-		# you could wait for it to finish then play 'idle'
-		#await anim.animation_finished 
-		#anim.play("idle")
-
 		# Wait before removing the cat from the scene
 		await get_tree().create_timer(3.0).timeout
+		
+		# --- NEW: Tell the global script to check if we lost! ---
+		GlobalLevel.check_conditions()
+		
 		queue_free()

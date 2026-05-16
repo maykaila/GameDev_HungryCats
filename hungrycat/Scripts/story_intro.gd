@@ -49,7 +49,7 @@ func play_sequence():
 		
 		await get_tree().create_timer(0.2).timeout 
 
-	# --- NEW FADE OUT CODE STARTS HERE ---
+	# --- FADE OUT CODE STARTS HERE ---
 	
 	# Create a tween for the audio
 	var audio_tween = create_tween()
@@ -60,7 +60,10 @@ func play_sequence():
 	# Wait for the audio fade to finish completely
 	await audio_tween.finished
 	
-	# --- NEW FADE OUT CODE ENDS HERE ---
+	# --- FADE OUT CODE ENDS HERE ---
+
+	# NEW: Mark the intro as successfully completed in our save file!
+	SaveManager.mark_intro_as_seen()
 
 	# Finally, change the scene
 	if main_menu_scene != null:

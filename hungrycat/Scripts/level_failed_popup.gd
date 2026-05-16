@@ -12,6 +12,14 @@ func _ready():
 	
 	menu_button.pressed.connect(_on_menu_pressed)
 	retry_level_button.pressed.connect(_on_retry_level_pressed)
+	
+	# NEW: Listen for the global fail signal from anywhere in the game!
+	ScoreManager.level_failed.connect(_on_global_level_failed)
+
+# NEW: This runs when the signal is triggered
+func _on_global_level_failed():
+	# Pass the current score directly into your existing open function
+	open_level_failed(ScoreManager.current_score)
 
 # FIXED: Renamed so it makes sense for failing
 func open_level_failed(final_score: int):
