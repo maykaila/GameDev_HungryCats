@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6frtq3u3ax4c" path="res://Scripts/globalLevel.gd" id="1_hj5x7"]
 [ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_v36qu"]
 [ext_resource type="PackedScene" uid="uid://f6f5e0h1tpor" path="res://Prefabs/cats/BlackCat.tscn" id="2_cggpd"]
+[ext_resource type="PackedScene" uid="uid://dc2wue0pm1ns8" path="res://Prefabs/UI/levelFailed_popup.tscn" id="2_yvrk7"]
 [ext_resource type="PackedScene" uid="uid://dackh6pi6dgjq" path="res://Prefabs/cats/GrayCat.tscn" id="3_055b2"]
 [ext_resource type="PackedScene" uid="uid://bikhytuiokcip" path="res://Prefabs/cats/OrangeCat.tscn" id="4_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://dita01pc4aw7o" path="res://Prefabs/wood/wood_block.tscn" id="5_42uki"]
@@ -15,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwx0jakfhr6n" path="res://Prefabs/wood/long_wood.tscn" id="10_vcilj"]
 [ext_resource type="PackedScene" uid="uid://ck4mgloapxgqo" path="res://Prefabs/trash_2.tscn" id="13_vcilj"]
 [ext_resource type="PackedScene" uid="uid://cc6evo7sdh7me" path="res://Scenes/catapult.tscn" id="14_bl0du"]
-[ext_resource type="PackedScene" uid="uid://cs65dx32r411l" path="res://Prefabs/UI/levelComplete_popup.tscn" id="16_yvrk7"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/levelComplete_popup.tscn" id="16_yvrk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42uki"]
 texture = ExtResource("1_v36qu")
@@ -447,7 +448,11 @@ section_markers = [NodePath("CameraPos1"), NodePath("CameraPos2")]
 rat_containers = [NodePath("Entities/Rats"), NodePath("Entities/Section2Rats")]
 cat_containers = [NodePath("Entities/CatQueue"), NodePath("Entities/CatQueue2")]
 
-[node name="levelComplete_popup" parent="." unique_id=2142754211 instance=ExtResource("16_yvrk7")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2674303]
+
+[node name="levelFailed_popup" parent="CanvasLayer" unique_id=2142754211 instance=ExtResource("2_yvrk7")]
+
+[node name="levelComplete_popup" parent="CanvasLayer" unique_id=1348743626 instance=ExtResource("16_yvrk7")]
 next_level_path = "uid://cfnmhi2he63y8"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=604456885]
