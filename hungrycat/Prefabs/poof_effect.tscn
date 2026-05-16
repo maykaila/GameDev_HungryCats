@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jst6qsjfvyhk"]
+
+[ext_resource type="Script" uid="uid://c3t1fytblikl7" path="res://Scripts/poof_effect.gd" id="1_6p4p3"]
+
+[node name="PoofEffect" type="CPUParticles2D" unique_id=1004748864]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 150.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+color = Color(0.4862745, 0.4862745, 0.38039216, 1)
+script = ExtResource("1_6p4p3")

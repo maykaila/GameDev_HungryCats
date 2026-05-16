@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const POOF_SCENE = preload("res://Prefabs/poof_effect.tscn")
+
 @export var max_hp: float = 100.0 
 @export var velocity_damage_threshold: float = 150.0 
 @export var damage_multiplier: float = 1.0
@@ -42,10 +44,22 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	ScoreManager.add_score(score_value)
-	AudioManager.play_rat_destroy()
+	AudioManager.play_rat_destroy() 
+	
+	# --- NEW POOF CODE ---
+	# 1. Create a copy of the poof
+	var poof = POOF_SCENE.instantiate()
+	
+	# 2. Move the poof to exactly where the rat is standing right now
+	poof.global_position = global_position
+	
+	# 3. Add the poof to the main level (NOT the rat, because the rat is about to die!)
+	get_tree().current_scene.add_child(poof)
+	# ---------------------
+	
 	var remaining_rats = get_tree().get_nodes_in_group("rats").size()
 	
 	if remaining_rats <= 1:
 		ScoreManager.trigger_level_complete(get_tree())
-
+	
 	queue_free()

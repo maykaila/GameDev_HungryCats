@@ -10,10 +10,6 @@ func add_score(points: int) -> void:
 	current_score += points
 	score_changed.emit(current_score)
 
-func reset_score() -> void:
-	current_score = 0
-	score_changed.emit(current_score)
-
 func trigger_level_complete(tree: SceneTree) -> void:
 	# 1. Find all cats in the level
 	var remaining_cats = tree.get_nodes_in_group("cats")
@@ -32,3 +28,8 @@ func trigger_level_complete(tree: SceneTree) -> void:
 		
 	# 4. Announce that the level is officially won
 	level_completed.emit(current_score)
+
+func reset_score() -> void:
+	current_score = 0
+	# Tell the HUD to update immediately so it doesn't show the old score for a split second!
+	score_changed.emit(current_score)

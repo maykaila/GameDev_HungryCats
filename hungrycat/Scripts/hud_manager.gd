@@ -7,10 +7,11 @@ extends CanvasLayer
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
+	# NEW: Wipe the slate clean every time this level loads!
+	ScoreManager.reset_score()
+	
 	# Connect the HUD to the global ScoreManager
 	ScoreManager.score_changed.connect(update_score_display)
-	
-	# Set the initial score text (usually "0" at the start)
 	update_score_display(ScoreManager.current_score)
 
 func update_score_display(new_score: int) -> void:

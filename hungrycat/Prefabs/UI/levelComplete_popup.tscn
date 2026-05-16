@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://cs65dx32r411l"]
+[gd_scene format=3 uid="uid://bumnve06x5632"]
 
 [ext_resource type="Script" uid="uid://db5mdl1y1udqb" path="res://Scripts/level_complete_popup.gd" id="1_3dguo"]
 [ext_resource type="Texture2D" uid="uid://cauovyvkr45qo" path="res://Assets/hud/pixilart-drawing.png" id="2_hor86"]
 [ext_resource type="FontFile" uid="uid://cd2qqhyek1q7u" path="res://Assets/Square-Black.ttf" id="3_h51a7"]
+[ext_resource type="Texture2D" uid="uid://dpdcbablwyih" path="res://Assets/star.png" id="4_74i8m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcpyp"]
 bg_color = Color(0.17027369, 0.43312508, 0.82550174, 1)
@@ -70,14 +71,15 @@ text = "LEVEL COMPLETE!"
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/TextureRect" unique_id=310198265]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29500002
-anchor_top = 0.45600003
-anchor_right = 0.29500002
-anchor_bottom = 0.45600003
+anchor_left = 0.22269233
+anchor_top = 0.49792874
+anchor_right = 0.22269231
+anchor_bottom = 0.49792874
 offset_left = 0.24998474
 offset_top = -15.765015
 offset_right = 277.25
 offset_bottom = 15.234985
+theme_override_constants/separation = 7
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="ColorRect/TextureRect/HBoxContainer" unique_id=486936184]
@@ -86,11 +88,18 @@ size_flags_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_h51a7")
 theme_override_font_sizes/font_size = 30
-text = "Score"
+text = "Score:"
 
 [node name="ActualScore" type="Label" parent="ColorRect/TextureRect/HBoxContainer" unique_id=734769713]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h51a7")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="HighScoreLabel" type="Label" parent="ColorRect/TextureRect/HBoxContainer" unique_id=622111146]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_h51a7")
 theme_override_font_sizes/font_size = 30
@@ -134,6 +143,38 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qcpyp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aqgmw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_co5rc")
 text = "Next Level"
+
+[node name="StarsContainer" type="HBoxContainer" parent="ColorRect/TextureRect" unique_id=1456070759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -75.0
+offset_right = 65.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/StarsContainer" unique_id=1707937013]
+layout_mode = 2
+texture = ExtResource("4_74i8m")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/TextureRect/StarsContainer" unique_id=1342137631]
+layout_mode = 2
+texture = ExtResource("4_74i8m")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="ColorRect/TextureRect/StarsContainer" unique_id=1700293854]
+layout_mode = 2
+texture = ExtResource("4_74i8m")
+expand_mode = 3
+stretch_mode = 6
 
 [connection signal="pressed" from="ColorRect/TextureRect/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="ColorRect/TextureRect/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
