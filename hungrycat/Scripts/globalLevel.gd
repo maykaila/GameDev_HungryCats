@@ -138,6 +138,7 @@ func trigger_end_game(is_win: bool):
 	game_over = true
 	
 	if is_win:
+		GameManager.unlock_next_level(GameManager.current_level_index)
 		ScoreManager.trigger_level_complete(get_tree())
 		if level_complete_ui:
 			level_complete_ui.open_level_complete(ScoreManager.current_score)
