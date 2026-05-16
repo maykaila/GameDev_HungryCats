@@ -57,9 +57,15 @@ func die() -> void:
 	get_tree().current_scene.add_child(poof)
 	# ---------------------
 	
-	var remaining_rats = get_tree().get_nodes_in_group("rats").size()
+	# 1. Count the rats. We subtract 1 because THIS rat hasn't fully deleted itself yet!
+	var remaining_rats = get_tree().get_nodes_in_group("rats").size() - 1
 	
-	if remaining_rats <= 1:
+	# 2. If that was the last rat, you won!
+	if remaining_rats <= 0:
+		# Wait 1.5 seconds for the final explosion to finish
+		await get_tree().create_timer(1.5).timeout
+		
+		# 3. Call your custom function to calculate the bonus points FIRST!
 		ScoreManager.trigger_level_complete(get_tree())
 	
 	queue_free()

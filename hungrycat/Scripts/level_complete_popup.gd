@@ -21,6 +21,13 @@ func _ready():
 	process_mode = PROCESS_MODE_ALWAYS
 	menu_button.pressed.connect(_on_menu_pressed)
 	next_level_button.pressed.connect(_on_next_level_pressed)
+	
+	# NEW: Listen for the exact signal name in your ScoreManager
+	ScoreManager.level_completed.connect(_on_global_level_completed)
+
+# NEW: This function catches the signal and the final_score, then opens the UI!
+func _on_global_level_completed(final_score: int):
+	open_level_complete(final_score)
 
 func open_level_complete(final_score: int):
 	actual_score_label.text = str(final_score)
