@@ -146,7 +146,7 @@ func trigger_end_game(is_win: bool):
 		# INSTEAD OF: get_tree().reload_current_scene()
 		# WE DO THIS:
 		if level_failed_ui:
-			level_failed_ui.open_level_failed()
+			level_failed_ui.open_level_failed(ScoreManager.current_score)
 		else:
 			# Fallback just in case you forgot to add the UI to a level
 			get_tree().reload_current_scene()

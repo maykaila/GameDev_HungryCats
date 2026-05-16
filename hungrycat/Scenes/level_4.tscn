@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2wm61a6jxfnx" path="res://Assets/tilemaps/Assets_City.png" id="1_3v663"]
 [ext_resource type="Script" uid="uid://c6frtq3u3ax4c" path="res://Scripts/globalLevel.gd" id="1_b8ytw"]
 [ext_resource type="PackedScene" uid="uid://dc2wue0pm1ns8" path="res://Prefabs/UI/levelFailed_popup.tscn" id="2_cxe20"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_mbnb1"]
+[ext_resource type="PackedScene" uid="uid://cs65dx32r411l" path="res://Prefabs/UI/levelComplete_popup.tscn" id="2_mbnb1"]
 [ext_resource type="PackedScene" uid="uid://c1epmcgrn24ap" path="res://Prefabs/wood/med_wood.tscn" id="2_w8kbg"]
 [ext_resource type="PackedScene" uid="uid://f6f5e0h1tpor" path="res://Prefabs/cats/BlackCat.tscn" id="3_gxyip"]
 [ext_resource type="PackedScene" uid="uid://dackh6pi6dgjq" path="res://Prefabs/cats/GrayCat.tscn" id="4_b8ytw"]
@@ -454,7 +454,6 @@ cat_containers = [NodePath("Entities/CatQueue"), NodePath("Entities/CatQueue2"),
 [node name="levelFailed_popup" parent="CanvasLayer" unique_id=2142754211 instance=ExtResource("2_cxe20")]
 
 [node name="levelComplete_popup" parent="CanvasLayer" unique_id=916625617 instance=ExtResource("2_mbnb1")]
-next_level_path = "uid://6uwagck0e2ye"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447362087]
 position = Vector2(645, 361)
