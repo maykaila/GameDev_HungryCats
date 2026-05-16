@@ -561,20 +561,13 @@ position = Vector2(895, 145)
 [node name="LongWood7" parent="Entities/Ratfort" unique_id=2081487376 instance=ExtResource("9_875uj")]
 position = Vector2(893, 278)
 
-[node name="WoodBlock11" parent="Entities/Ratfort" unique_id=1630881481 instance=ExtResource("8_28yyb")]
-position = Vector2(984, 330.99988)
-rotation = 0.8680201
-
 [node name="Trash3" parent="Entities/Ratfort" unique_id=1973781408 instance=ExtResource("9_fdnf0")]
 position = Vector2(960, 236)
 
 [node name="MedWood8" parent="Entities/Ratfort" unique_id=1754277334 instance=ExtResource("7_4jl0u")]
-position = Vector2(846, 235.00009)
-rotation = -0.93828285
+position = Vector2(845.00006, 310)
+rotation = -1.228625
 scale = Vector2(0.9999998, 0.9999998)
-
-[node name="WoodBlock12" parent="Entities/Ratfort" unique_id=1695435261 instance=ExtResource("8_28yyb")]
-position = Vector2(946, 154)
 
 [node name="Box2" parent="Entities/Ratfort" unique_id=2015862005 instance=ExtResource("10_fvdwk")]
 position = Vector2(3375, 557)
@@ -692,7 +685,7 @@ position = Vector2(2208, 261)
 position = Vector2(837, 215)
 
 [node name="Rat10" parent="Entities/Rats" unique_id=1754653348 instance=ExtResource("11_l5rae")]
-position = Vector2(838, 158)
+position = Vector2(825, 157)
 
 [node name="Rat11" parent="Entities/Rats" unique_id=1725718497 instance=ExtResource("11_l5rae")]
 position = Vector2(838, 402)

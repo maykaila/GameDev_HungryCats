@@ -588,20 +588,13 @@ position = Vector2(2253, 254)
 [node name="LongWood3" parent="Entities/Ratfort" unique_id=590850660 instance=ExtResource("10_vcilj")]
 position = Vector2(2161, 209)
 
-[node name="WoodBlock11" parent="Entities/Ratfort" unique_id=653963314 instance=ExtResource("5_42uki")]
-position = Vector2(2250, 394.99988)
-rotation = 0.8680201
-
 [node name="Trash2" parent="Entities/Ratfort" unique_id=1973781408 instance=ExtResource("13_vcilj")]
 position = Vector2(2226, 300)
 
 [node name="MedWood8" parent="Entities/Ratfort" unique_id=780484246 instance=ExtResource("9_ait6c")]
-position = Vector2(2112, 299.00006)
-rotation = -0.93828285
+position = Vector2(2116.9998, 378.9999)
+rotation = -1.2489402
 scale = Vector2(0.99999994, 0.99999994)
-
-[node name="WoodBlock12" parent="Entities/Ratfort" unique_id=229265113 instance=ExtResource("5_42uki")]
-position = Vector2(2212, 218)
 
 [node name="Section2Rats" type="Node2D" parent="Entities" unique_id=1290948395]
 
@@ -612,7 +605,7 @@ position = Vector2(2107, 420)
 position = Vector2(2103, 279)
 
 [node name="Rat6" parent="Entities/Section2Rats" unique_id=304133425 instance=ExtResource("9_vcilj")]
-position = Vector2(2104, 222)
+position = Vector2(2090, 221)
 
 [node name="Rats" type="Node2D" parent="Entities" unique_id=1868484386]
 
