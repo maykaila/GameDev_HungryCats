@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var level_complete_ui = $levelComplete_popup
+@onready var level_complete_ui = $CanvasLayer/levelComplete_popup
+@onready var level_failed_ui = $CanvasLayer/levelFailed_popup
 @onready var camera = $Camera2D
 
 @export var section_markers: Array[Marker2D] = []
@@ -52,14 +53,21 @@ func _process(_delta: float) -> void:
 
 func check_conditions():
 	var rats_in_group = get_tree().get_nodes_in_group("rats")
+	
+	# --- WIN Logic ---
 	if rats_in_group.size() == 0:
+		can_check_win = false # Stop checking while we wait
+		
+		# Wait 1.5 seconds so the player can see the building collapse
+		await get_tree().create_timer(1.5).timeout 
+		
 		if section_markers.size() > 0 and current_section_index < section_markers.size() - 1:
 			advance_to_next_section()
 		else:
 			trigger_end_game(true)
 		return
 
-	# LOSS Logic
+	# --- LOSS Logic ---
 	var cats_left = get_tree().get_nodes_in_group("cats")
 	var catapults = get_tree().get_nodes_in_group("catapult_group")
 	var any_catapult_has_cat = false
@@ -71,9 +79,17 @@ func check_conditions():
 				break
 	
 	if cats_left.size() == 0 and not any_catapult_has_cat:
-		await get_tree().create_timer(3.5).timeout
+		can_check_win = false # Stop checking while we wait
+		
+		# REDUCED from 3.5 to 1.5 to match the Win timing
+		await get_tree().create_timer(1.5).timeout
+		
+		# Check one last time if a rat survived the final cat
 		if get_tree().get_nodes_in_group("rats").size() > 0:
 			trigger_end_game(false)
+		else:
+			# If the last cat actually killed the last rat during the delay
+			trigger_end_game(true)
 
 func advance_to_next_section():
 	can_check_win = false 
@@ -120,9 +136,16 @@ func update_catapult_system():
 func trigger_end_game(is_win: bool):
 	if game_over: return
 	game_over = true
+	
 	if is_win:
 		ScoreManager.trigger_level_complete(get_tree())
 		if level_complete_ui:
 			level_complete_ui.open_level_complete(ScoreManager.current_score)
 	else:
-		get_tree().reload_current_scene()
+		# INSTEAD OF: get_tree().reload_current_scene()
+		# WE DO THIS:
+		if level_failed_ui:
+			level_failed_ui.open_level_failed()
+		else:
+			# Fallback just in case you forgot to add the UI to a level
+			get_tree().reload_current_scene()
