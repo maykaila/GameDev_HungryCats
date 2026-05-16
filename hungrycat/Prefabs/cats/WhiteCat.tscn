@@ -2,8 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c4lsh3pt5kx20" path="res://Prefabs/cats/cat.tscn" id="1_rlpsf"]
 [ext_resource type="SpriteFrames" uid="uid://cvc08tvdw6v13" path="res://Assets/Cats/WhiteCat_Frames.tres" id="2_2rh8w"]
+[ext_resource type="AudioStream" uid="uid://cu2thpo8wsi5n" path="res://Assets/Audio/meow.wav" id="3_vw2ke"]
 
 [node name="Cat" unique_id=1973975741 instance=ExtResource("1_rlpsf")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1316354509]
 sprite_frames = ExtResource("2_2rh8w")
+
+[node name="SfxMeow" type="AudioStreamPlayer2D" parent="." index="2" unique_id=236110160]
+stream = ExtResource("3_vw2ke")
+bus = &"SFX"

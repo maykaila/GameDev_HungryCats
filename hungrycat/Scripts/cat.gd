@@ -2,6 +2,7 @@ extends RigidBody2D
 
 # Reference to your AnimatedSprite2D node
 @onready var anim = $AnimatedSprite2D
+@onready var sfx_meow = get_node_or_null("SfxMeow")
 
 var is_loading = false
 var was_thrown = false
@@ -78,6 +79,11 @@ func throw(velocity_vector: Vector2):
 	was_thrown = true
 	anim.play("airborne")
 	freeze = false
+	# NEW: Only play the sound if the node was successfully found!
+	if sfx_meow:
+		sfx_meow.play()
+	else:
+		print("Warning: This specific cat is missing its SfxMeow node!")
 	collision_layer = 0
 	collision_mask = 0
 	apply_central_impulse(velocity_vector)

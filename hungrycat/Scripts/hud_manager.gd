@@ -18,10 +18,12 @@ func update_score_display(new_score: int) -> void:
 	score_label.text = str(new_score)
 
 func _on_pause_button_pressed() -> void:
+	AudioManager.play_click()
 	pause_overlay.visible = true
 	get_tree().paused = true
 
 func _on_btn_play_pressed() -> void:
+	AudioManager.play_click()
 	pause_overlay.visible = false
 	get_tree().paused = false
 

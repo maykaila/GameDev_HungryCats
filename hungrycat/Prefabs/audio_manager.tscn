@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://8w8yk006nhn3"]
+
+[ext_resource type="Script" uid="uid://ci180fru4m0kp" path="res://Scripts/audio_manager.gd" id="1_ga8lj"]
+[ext_resource type="AudioStream" uid="uid://bjte6bolqdo66" path="res://Assets/Audio/click.wav" id="2_rgjcj"]
+[ext_resource type="AudioStream" uid="uid://igdr6rwo83uw" path="res://Assets/Audio/wood.wav" id="3_y6pob"]
+[ext_resource type="AudioStream" uid="uid://c7yccyiydvwuh" path="res://Assets/Audio/squeak.wav" id="4_rgjcj"]
+
+[node name="AudioManager" type="Node2D" unique_id=1787702872]
+script = ExtResource("1_ga8lj")
+
+[node name="SfxClick" type="AudioStreamPlayer" parent="." unique_id=1271639178]
+stream = ExtResource("2_rgjcj")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="SfxDestroy" type="AudioStreamPlayer" parent="." unique_id=1574375496]
+stream = ExtResource("3_y6pob")
+bus = &"SFX"
+
+[node name="SfxRatDestroy" type="AudioStreamPlayer" parent="." unique_id=1794622735]
+stream = ExtResource("4_rgjcj")
+bus = &"SFX"
