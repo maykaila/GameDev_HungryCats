@@ -18,7 +18,8 @@ script = ExtResource("1_c737h")
 position = Vector2(12.500002, 33.062515)
 scale = Vector2(0.18999998, 0.1862499)
 sprite_frames = ExtResource("1_3rjor")
-animation = &"airborne"
+animation = &"land"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392588693]
 position = Vector2(12, 32)

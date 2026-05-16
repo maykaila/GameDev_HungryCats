@@ -9,3 +9,5 @@ gravity_scale = 2.5
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1316354509]
 sprite_frames = ExtResource("2_034k2")
+animation = &"idle"
+autoplay = "idle"
