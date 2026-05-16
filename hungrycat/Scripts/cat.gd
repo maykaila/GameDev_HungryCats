@@ -102,10 +102,6 @@ func _on_body_entered(_body):
 		
 		anim.play("land")
 		
-		# Wait before removing the cat from the scene
+		# Wait 3 seconds for the wood to tumble, then quietly disappear!
 		await get_tree().create_timer(3.0).timeout
-		
-		# --- NEW: Tell the global script to check if we lost! ---
-		GlobalLevel.check_conditions()
-		
 		queue_free()

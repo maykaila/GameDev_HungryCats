@@ -43,29 +43,17 @@ func take_damage(amount: float) -> void:
 		die()
 
 func die() -> void:
+	# 1. Give the player points
 	ScoreManager.add_score(score_value)
-	AudioManager.play_rat_destroy() 
 	
-	# --- NEW POOF CODE ---
-	# 1. Create a copy of the poof
+	# Optional: If you have a squeak sound, play it here!
+	# AudioManager.play_rat_destroy() 
+	
+	# 2. Spawn the visual Poof effect
 	var poof = POOF_SCENE.instantiate()
-	
-	# 2. Move the poof to exactly where the rat is standing right now
 	poof.global_position = global_position
-	
-	# 3. Add the poof to the main level (NOT the rat, because the rat is about to die!)
 	get_tree().current_scene.add_child(poof)
-	# ---------------------
 	
-	# 1. Count the rats. We subtract 1 because THIS rat hasn't fully deleted itself yet!
-	var remaining_rats = get_tree().get_nodes_in_group("rats").size() - 1
-	
-	# 2. If that was the last rat, you won!
-	if remaining_rats <= 0:
-		# Wait 1.5 seconds for the final explosion to finish
-		await get_tree().create_timer(1.5).timeout
-		
-		# 3. Call your custom function to calculate the bonus points FIRST!
-		ScoreManager.trigger_level_complete(get_tree())
-	
+	# 3. Delete the rat! 
+	# (globalLevel.gd will automatically notice it's gone and handle the rest)
 	queue_free()
