@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b6m8imeorc73n" path="res://Prefabs/catapult-testing.gd" id="1_tpfg1"]
 [ext_resource type="Texture2D" uid="uid://b010x8dnydgyw" path="res://Assets/Catapult/catapultSpoon.png" id="2_d1wd2"]
 [ext_resource type="Texture2D" uid="uid://b2ur8f0a0jbbw" path="res://Assets/Catapult/catapultBody.png" id="3_v0fog"]
+[ext_resource type="AudioStream" uid="uid://bq8164t4jm3ng" path="res://Assets/Audio/pull.wav" id="4_v0fog"]
+[ext_resource type="AudioStream" uid="uid://brucj6tto0xn7" path="res://Assets/Audio/launch.wav" id="5_0lneg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfg1"]
 size = Vector2(23, 23)
@@ -34,5 +36,11 @@ centered = false
 
 [node name="launchPoint" type="Marker2D" parent="axle/spoon" unique_id=673969740]
 position = Vector2(190.00002, 70)
+
+[node name="SfxPull" type="AudioStreamPlayer" parent="." unique_id=159661187]
+stream = ExtResource("4_v0fog")
+
+[node name="SfxLaunch" type="AudioStreamPlayer" parent="." unique_id=1006300866]
+stream = ExtResource("5_0lneg")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

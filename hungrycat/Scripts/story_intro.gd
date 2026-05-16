@@ -23,6 +23,7 @@ func _ready():
 
 # This function runs exactly when the player clicks the button
 func _on_start_button_pressed():
+	AudioManager.play_click()
 	# Hide the "Wanna play?" screen and the button
 	start_screen.hide()
 	

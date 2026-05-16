@@ -42,4 +42,10 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	ScoreManager.add_score(score_value)
+	AudioManager.play_rat_destroy()
+	var remaining_rats = get_tree().get_nodes_in_group("rats").size()
+	
+	if remaining_rats <= 1:
+		ScoreManager.trigger_level_complete(get_tree())
+
 	queue_free()

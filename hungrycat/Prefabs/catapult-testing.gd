@@ -3,6 +3,8 @@ extends Node2D
 @onready var axle = $axle
 @onready var launch_point = $axle/spoon/launchPoint
 @onready var trajectory_line: Line2D = $TrajectoryLine
+@onready var sfx_pull: AudioStreamPlayer = $SfxPull
+@onready var sfx_launch: AudioStreamPlayer = $SfxLaunch
 
 @export var is_active: bool = true # Check/Uncheck this in the Inspector for Catapult 2!
 
@@ -22,24 +24,36 @@ func _ready():
 	add_to_group("catapult_group")
 
 func _process(delta):
-	# NEW: If not active, don't allow aiming or launching
+	# If not active, don't allow aiming or launching
 	if not is_active:
 		trajectory_line.clear_points()
 		return
 
 	if is_instance_valid(loaded_cat):
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			is_pulling = true
 			var mouse_pos = get_global_mouse_position()
-			current_drag_vector = global_position - mouse_pos
-			var drag_distance = current_drag_vector.length()
-			pull_power = clamp(drag_distance / max_drag_distance, 0.0, 1.0)
-			axle.rotation = deg_to_rad(pull_power * max_pull_back_degrees)
-			update_trajectory() 
+			
+			# NEW: Check if the mouse is clicking close to the catapult first!
+			if not is_pulling:
+				# 150.0 is the pixel radius. If you click further than 150 pixels away, do nothing!
+				if global_position.distance_to(mouse_pos) > 150.0:
+					pass 
+				else:
+					sfx_pull.play()
+					is_pulling = true
+			
+			# If we successfully grabbed it, do the math as normal
+			if is_pulling:
+				current_drag_vector = global_position - mouse_pos
+				var drag_distance = current_drag_vector.length()
+				pull_power = clamp(drag_distance / max_drag_distance, 0.0, 1.0)
+				axle.rotation = deg_to_rad(pull_power * max_pull_back_degrees)
+				update_trajectory() 
 			
 		elif is_pulling:
 			launch()
 	
+	# ... (Keep the rest of your recovery code at the bottom exactly the same!)
 	if not is_pulling:
 		axle.rotation = lerp_angle(axle.rotation, 0.0, delta * release_speed)
 		trajectory_line.clear_points()
@@ -60,6 +74,13 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 
 func launch():
 	is_recovering = true
+	
+	# NEW: Force the stretching sound to stop immediately!
+	sfx_pull.stop() 
+	
+	# Play the snapping/launching sound
+	sfx_launch.play()
+	
 	var launch_dir = Vector2.RIGHT.rotated(deg_to_rad(-60))
 	if current_drag_vector.length() > 10.0:
 		launch_dir = current_drag_vector.normalized()

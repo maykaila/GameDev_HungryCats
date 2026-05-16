@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b6m8imeorc73n" path="res://Prefabs/catapult-testing.gd" id="1_fpf4n"]
 [ext_resource type="Texture2D" uid="uid://b010x8dnydgyw" path="res://Assets/Catapult/catapultSpoon.png" id="2_mlphu"]
 [ext_resource type="Texture2D" uid="uid://b2ur8f0a0jbbw" path="res://Assets/Catapult/catapultBody.png" id="3_06edq"]
+[ext_resource type="AudioStream" uid="uid://bq8164t4jm3ng" path="res://Assets/Audio/pull.wav" id="4_hrfp7"]
+[ext_resource type="AudioStream" uid="uid://brucj6tto0xn7" path="res://Assets/Audio/launch.wav" id="5_7a2h3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfg1"]
 size = Vector2(23, 23)
@@ -38,5 +40,14 @@ shape = SubResource("RectangleShape2D_tpfg1")
 [node name="TrajectoryLine" type="Line2D" parent="." unique_id=1545365623]
 width = 3.0
 default_color = Color(1, 1, 1, 0.6862745)
+
+[node name="SfxPull" type="AudioStreamPlayer" parent="." unique_id=1449113477]
+stream = ExtResource("4_hrfp7")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="SfxLaunch" type="AudioStreamPlayer" parent="." unique_id=956722367]
+stream = ExtResource("5_7a2h3")
+bus = &"SFX"
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

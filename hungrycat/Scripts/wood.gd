@@ -49,4 +49,5 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	ScoreManager.add_score(score_value)
+	AudioManager.play_destroy()
 	queue_free()

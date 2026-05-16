@@ -17,22 +17,32 @@ func update_level_buttons():
 		else:
 			button.disabled = true
 			button.mouse_default_cursor_shape = Control.CURSOR_ARROW
+			
+func _on_settings_button_pressed() -> void:
+	AudioManager.play_click()
+	$SettingsPopup.show()
 
 # Update your button presses to use the GameManager indices
 func _on_level_1_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(0)
-
+	
 func _on_level_2_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(1)
 
 func _on_level_3_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(2)
 
 func _on_level_4_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(3)
 
 func _on_level_5_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(4)
 
 func _on_level_6_pressed():
+	AudioManager.play_click()
 	GameManager.load_level(5)
